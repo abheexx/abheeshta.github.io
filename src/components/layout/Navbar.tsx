@@ -34,8 +34,9 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Achievements', href: '#achievements' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Education', href: '#education' }
   ];
 
   const socialLinks = [
@@ -55,26 +56,15 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           : 'py-5 bg-transparent'
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center">
-        <motion.a
-          href="#home"
-          className="text-2xl font-bold text-primary-600 dark:text-primary-400"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Portfolio<span className="text-accent-600 dark:text-accent-400">.</span>
-        </motion.a>
-
+      <div className="container mx-auto flex justify-end items-center">
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           <ul className="flex space-x-6">
             {navLinks.map((link) => (
-              <motion.li key={link.name}>
+              <motion.li key={link.name} whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
                 <a
                   href={link.href}
                   className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"
-                  whileHover={{ y: -2 }}
-                  whileTap={{ y: 0 }}
                 >
                   {link.name}
                 </a>
@@ -83,20 +73,6 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
           </ul>
 
           <div className="flex items-center space-x-4">
-            {socialLinks.map((link) => (
-              <motion.a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                whileHover={{ y: -2, color: '#6366F1' }}
-                whileTap={{ y: 0 }}
-                aria-label={link.name}
-              >
-                {link.icon}
-              </motion.a>
-            ))}
             
             <motion.button
               onClick={toggleTheme}

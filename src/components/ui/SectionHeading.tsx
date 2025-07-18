@@ -30,18 +30,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
           transition={{ duration: 0.8, delay: 0.3 }}
         />
       </motion.h2>
-      
-      {subtitle && (
-        <motion.p 
-          className="text-gray-600 dark:text-gray-400 mt-6 max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          {subtitle}
-        </motion.p>
-      )}
+      {/* Subtitle removed as per user request */}
     </div>
   );
 };

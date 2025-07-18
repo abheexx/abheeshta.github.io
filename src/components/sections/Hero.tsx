@@ -50,20 +50,11 @@ const Hero: React.FC = () => {
   const techStack = [
     { name: 'OpenAI', icon: '🧠' },
     { name: 'LangChain', icon: '🔍' },
-    { name: 'Pinecone', icon: '🌲' },
-    { name: 'Vector DBs', icon: '📦' },
-    { name: 'LLM Agents', icon: '🎯' },
     { name: 'Python', icon: '🐍' },
     { name: 'React', icon: '⚛️' },
     { name: 'Node.js', icon: '⚙️' },
     { name: 'Docker', icon: '🐳' },
-    { name: 'GCP / AWS', icon: '☁️' },
-    { name: 'Webhooks', icon: '📡' },
-    { name: 'FastAPI', icon: '🎯' },
-    { name: 'Vercel', icon: '🔁' },
-    { name: 'Vapi.ai', icon: '💬' },
-    { name: 'API Integrations', icon: '🔗' },
-    { name: 'Postgres / Redis', icon: '📈' }
+    { name: 'GCP / AWS', icon: '☁️' }
   ];
 
   return (
@@ -72,18 +63,6 @@ const Hero: React.FC = () => {
       id="home" 
       className="min-h-screen flex items-center relative overflow-hidden pt-20"
     >
-      {/* Background Particles */}
-      <div className="absolute inset-0 z-0">
-        <Canvas className="w-full h-full">
-          <ParticleField 
-            count={1500} 
-            size={0.015} 
-            radius={3} 
-            color="#6366F1" 
-            speed={0.05}
-          />
-        </Canvas>
-      </div>
       
       <div className="container mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
@@ -95,7 +74,7 @@ const Hero: React.FC = () => {
             ref={ref}
           >
             <motion.div variants={itemVariants} className="inline-block mb-4 px-4 py-1 rounded-full bg-primary-50/20 dark:bg-primary-900/20 backdrop-blur-sm border border-primary-100 dark:border-primary-800">
-              <span className="text-primary-600 dark:text-primary-400 font-medium">AI-Fueled Software Engineer</span>
+              <span className="text-primary-600 dark:text-primary-400 font-medium">Hi there! I'm</span>
             </motion.div>
             
             <motion.h1 
@@ -195,29 +174,6 @@ const Hero: React.FC = () => {
                   transition={{ duration: 0.8, delay: 0.7 }}
                 />
                 
-                {/* Floating particles around image */}
-                <div className="absolute inset-0 pointer-events-none">
-                  {[...Array(8)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      className="absolute w-2 h-2 bg-primary-500/60 rounded-full"
-                      style={{
-                        top: `${20 + (i * 10)}%`,
-                        left: `${10 + (i * 12)}%`,
-                      }}
-                      animate={{
-                        y: [-10, 10, -10],
-                        opacity: [0.3, 0.8, 0.3],
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        delay: i * 0.5,
-                      }}
-                    />
-                  ))}
-                </div>
-                
                 {/* Glowing effect */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500/10 to-accent-500/10 blur-xl animate-pulse" />
               </motion.div>
@@ -225,15 +181,6 @@ const Hero: React.FC = () => {
           </motion.div>
         </div>
         
-        <motion.div 
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.5, repeat: Infinity, repeatType: "reverse" }}
-        >
-          <span className="text-sm text-gray-500 dark:text-gray-400 mb-2">Scroll Down</span>
-          <ArrowDown size={20} className="text-primary-500 dark:text-primary-400 animate-bounce" />
-        </motion.div>
       </div>
     </section>
     

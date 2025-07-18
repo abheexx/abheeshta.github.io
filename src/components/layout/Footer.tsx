@@ -14,13 +14,13 @@ const Footer: React.FC = () => {
     { name: 'GitHub', icon: <Github className="w-5 h-5" />, href: 'https://github.com/' },
     { name: 'LinkedIn', icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/in/' },
     { name: 'Twitter', icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/' },
-    { name: 'Email', icon: <Mail className="w-5 h-5" />, href: 'mailto:your.email@example.com' }
+    { name: 'Email', icon: <Mail className="w-5 h-5" />, href: 'mailto:a.vemuri@ufl.edu' }
   ];
 
   return (
     <footer className="relative bg-gray-50 dark:bg-dark-200 py-12">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
             <h3 className="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-4">
               Portfolio<span className="text-accent-600 dark:text-accent-400">.</span>
@@ -47,31 +47,15 @@ const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              {['Home', 'About', 'Skills', 'Projects', 'Experience', 'Contact'].map((item) => (
-                <motion.li key={item} whileHover={{ x: 2 }}>
-                  <a 
-                    href={`#${item.toLowerCase()}`}
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400"
-                  >
-                    {item}
-                  </a>
-                </motion.li>
-              ))}
-            </ul>
-          </div>
-          
-          <div>
             <h4 className="font-semibold text-gray-900 dark:text-white mb-4">Contact</h4>
-            <p className="text-gray-600 dark:text-gray-400">your.email@example.com</p>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">Your Location</p>
+            <p className="text-gray-600 dark:text-gray-400">a.vemuri@ufl.edu</p>
+            <p className="text-gray-600 dark:text-gray-400 mt-2">Gainesville, Florida</p>
           </div>
         </div>
         
         <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            © {new Date().getFullYear()} Your Name. All rights reserved.
+            © {new Date().getFullYear()} Abheeshta Vemuri. All rights reserved.
           </p>
           
           <motion.button

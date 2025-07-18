@@ -4,13 +4,14 @@ import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Skills from './components/sections/Skills';
 import Projects from './components/sections/Projects';
+import Achievements from './components/sections/Achievements';
 import Experience from './components/sections/Experience';
 import Contact from './components/sections/Contact';
 import Footer from './components/layout/Footer';
 import Cursor from './components/ui/Cursor';
+import ChatWidget from './components/ui/ChatWidget';
 import { AnimatePresence } from 'framer-motion';
 import Loader from './components/ui/Loader';
-import ParticlesBackground from './components/canvas/ParticlesBackground';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -48,7 +49,6 @@ function App() {
   return (
     <>
       <Cursor />
-      <ParticlesBackground />
       <AnimatePresence mode="wait">
         {loading ? (
           <Loader key="loader" />
@@ -60,10 +60,12 @@ function App() {
               <About />
               <Skills />
               <Projects />
+              <Achievements />
               <Experience />
               <Contact />
             </main>
             <Footer />
+            <ChatWidget />
           </div>
         )}
       </AnimatePresence>
