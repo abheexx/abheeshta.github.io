@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Link } from 'react-router-dom';
 import TypingEffect from '../ui/TypingEffect';
 import Terminal from '../ui/Terminal';
 import { useState } from 'react';
@@ -128,36 +129,36 @@ const Hero: React.FC = () => {
             </motion.p>
             
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 justify-center">
-              <a 
-                href="/about" 
+              <Link 
+                to="/about" 
                 className="btn btn-primary"
               >
                 About Me
-              </a>
-              <a 
-                href="/experience" 
+              </Link>
+              <Link 
+                to="/experience" 
                 className="btn btn-primary"
               >
                 Experience
-              </a>
-              <a 
-                href="/projects" 
+              </Link>
+              <Link 
+                to="/projects" 
                 className="btn btn-primary"
               >
                 Projects
-              </a>
-              <a 
-                href="/skills" 
+              </Link>
+              <Link 
+                to="/skills" 
                 className="btn btn-primary"
               >
                 My Skills
-              </a>
-              <a 
-                href="/achievements" 
+              </Link>
+              <Link 
+                to="/achievements" 
                 className="btn btn-primary"
               >
                 Achievements
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
