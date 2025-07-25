@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Bot, User, MessageCircle, X, FileText, FolderOpen, HelpCircle } from 'lucide-react';
+import { Send, X } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -12,7 +12,7 @@ interface Message {
 const ChatWidget: React.FC = () => {
   const initialMessage: Message = {
     id: '1',
-    text: "Hi! I'm Abheeshta's AI Assistant 🤖 How can I help you today?",
+    text: "Greetings, traveler! I'm Abheeshta's AI Assistant! How can I help you explore her world today? 🗺️",
     sender: 'bot',
     timestamp: new Date()
   };
@@ -54,28 +54,12 @@ const ChatWidget: React.FC = () => {
       return "I'm Abheeshta's AI assistant! I can help you learn about her background, skills, experience, education, and projects. What would you like to know?";
     }
     
-    if (message.includes('joke') || message.includes('funny')) {
-      return knowledgeBase.joke;
+    if (message.includes('🗺️') || message.includes('explore') || message.includes('site')) {
+      return "🗺️ Welcome to my portfolio! Here's your adventure map:\n\n🎯 Projects - Check out my latest creations like Code2Video, PdfExtract, and AI Email Reader\n⚡ Skills - See my tech arsenal (Python, React, AI/ML, Cloud, etc.)\n💼 Experience - My journey from internships to Amazon Web Services\n🏆 Achievements - Awards, certifications, and milestones\n\nWhich area would you like to explore first? I can guide you through any section!";
     }
     
-    if (message.includes('superpower') || message.includes('power')) {
-      return knowledgeBase.superpower;
-    }
-    
-    if (message.includes('talent') || message.includes('secret')) {
-      return knowledgeBase.talent;
-    }
-    
-    if (message.includes('spirit') || message.includes('animal')) {
-      return knowledgeBase.spirit;
-    }
-    
-    if (message.includes('coffee') || message.includes('fuel') || message.includes('coding')) {
-      return knowledgeBase.coffee;
-    }
-    
-    if (message.includes('future') || message.includes('vision') || message.includes('ai')) {
-      return knowledgeBase.future;
+    if (message.includes('🧠') || message.includes('stand out') || message.includes('brag')) {
+      return "🧠 In my own voice - Here's what makes me stand out:\n\n🚀 I build systems that think - From AI agents to scalable APIs, I create intelligent solutions that actually work\n💡 Problem-solver extraordinaire - Give me a complex challenge and I'll break it down into elegant, efficient solutions\n🎯 Results-driven - At Amazon, I've shipped features used by millions. At Barclays, I automated processes saving 40+ hours weekly\n🧪 Research meets production - I bridge the gap between cutting-edge AI research and real-world applications\n🌟 Always learning - Currently pursuing my Master's while working full-time, because why sleep when you can code?\n\nPlus, I explain complex AI concepts like I'm talking to a friend over coffee! ☕";
     }
     
     if (message.includes('education') || message.includes('study') || message.includes('university') || message.includes('degree')) {
@@ -144,23 +128,11 @@ const ChatWidget: React.FC = () => {
   const handleQuickReply = (action: string) => {
     let message = '';
     switch (action) {
-      case 'joke':
-        message = "Tell me a joke!";
+      case 'explore':
+        message = "🗺️ Help me explore the site!";
         break;
-      case 'superpower':
-        message = "What's your superpower?";
-        break;
-      case 'talent':
-        message = "What's your secret talent?";
-        break;
-      case 'spirit':
-        message = "What's your spirit animal?";
-        break;
-      case 'coffee':
-        message = "How do you fuel your coding sessions?";
-        break;
-      case 'future':
-        message = "What's your vision for the future of AI?";
+      case 'standout':
+        message = "🧠 What makes her stand out?";
         break;
     }
     handleSendMessage(message);
@@ -176,24 +148,33 @@ const ChatWidget: React.FC = () => {
   return (
     <>
       {/* Floating Chat Button */}
-      {/* Quirky Arrow and Label */}
-      <div className="fixed bottom-20 right-6 z-50 flex flex-col items-center select-none pointer-events-none">
-        <span className="px-3 py-1 rounded-full bg-primary-100 dark:bg-primary-900/40 text-primary-700 dark:text-primary-200 text-xs font-semibold shadow-md animate-pulse pointer-events-auto" style={{marginTop: '-0.5rem'}}>Try my AI chatbot!</span>
-      </div>
       <motion.button
         onClick={() => {
           setMessages([initialMessage]);
           setIsOpen(true);
         }}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+        className="fixed bottom-20 right-6 z-50 w-16 h-16 bg-white border-4 border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center overflow-hidden"
+        style={{ boxShadow: '0 4px 0 #5D4037' }}
+        whileHover={{ scale: 1.1, y: -2 }}
+        whileTap={{ scale: 0.95, y: 0 }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 1 }}
       >
-        <MessageCircle className="w-6 h-6" />
+        <img 
+          src="/Cute Pixel Art Robot.jpeg" 
+          alt="AI Assistant" 
+          className="w-full h-full object-cover object-center"
+          style={{ transform: 'scale(1.2)' }}
+        />
       </motion.button>
+      
+      {/* Label on top with squared box */}
+      <div className="fixed bottom-36 right-6 z-50 flex flex-col items-center select-none pointer-events-none">
+        <div className="px-3 py-1 bg-white border-2 border-gray-800 text-xs font-semibold shadow-md animate-pulse pointer-events-auto" style={{color: '#825432', boxShadow: '0 2px 0 #5D4037'}}>
+          🤖 Chat with my AI!
+        </div>
+      </div>
 
       {/* Chat Window */}
       <AnimatePresence>
@@ -203,18 +184,24 @@ const ChatWidget: React.FC = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-24 right-6 z-50 w-96 h-[32rem] bg-white dark:bg-dark-100 rounded-2xl shadow-2xl border border-gray-200 dark:border-dark-300 overflow-hidden flex flex-col"
+            className="fixed bottom-24 right-6 z-50 w-96 h-[32rem] bg-white border-4 border-gray-800 shadow-2xl overflow-hidden flex flex-col"
+            style={{ boxShadow: '0 8px 0 #5D4037' }}
           >
             {/* Chat Header */}
-            <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-4 text-white">
+            <div className="bg-white border-b-4 border-gray-800 p-4" style={{color: '#54C754'}}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                    <Bot className="w-5 h-5" />
+                  <div className="w-8 h-8 bg-gray-200 border-2 border-gray-600 flex items-center justify-center overflow-hidden">
+                    <img 
+                      src="/Cute Pixel Art Robot.jpeg" 
+                      alt="AI Assistant" 
+                      className="w-full h-full object-cover object-center"
+                      style={{ transform: 'scale(1.3)' }}
+                    />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold">Hi, I'm Abheeshta's AI Assistant 🤖</h3>
-                    <p className="text-blue-100 text-xs">Ask me anything!</p>
+                    <h3 className="text-lg font-bold" style={{color: '#54C754'}}>AI Assistant</h3>
+                    <p className="text-xs" style={{color: '#825432'}}>Ask me anything about Abheeshta's world!</p>
                   </div>
                 </div>
                 <button
@@ -222,7 +209,8 @@ const ChatWidget: React.FC = () => {
                     setIsOpen(false);
                     setMessages([initialMessage]);
                   }}
-                  className="p-1 hover:bg-white/20 rounded-full transition-colors"
+                  className="p-2 border-2 border-gray-800 bg-white hover:bg-gray-200 transition-colors"
+                  style={{color: '#825432'}}
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -230,19 +218,21 @@ const ChatWidget: React.FC = () => {
             </div>
 
             {/* Quick Reply Buttons */}
-            <div className="p-3 border-b border-gray-200 dark:border-dark-300">
+            <div className="p-3 border-b-4 border-gray-800 bg-gray-100">
               <div className="flex flex-wrap gap-2">
                 <button
-                  onClick={() => handleQuickReply('joke')}
-                  className="flex items-center gap-1 px-3 py-1.5 bg-yellow-50 dark:bg-yellow-900/20 text-yellow-600 dark:text-yellow-400 rounded-full text-xs font-medium hover:bg-yellow-100 dark:hover:bg-yellow-900/30 transition-colors"
+                  onClick={() => handleQuickReply('explore')}
+                  className="flex items-center gap-1 px-3 py-2 bg-white border-2 border-gray-800 text-xs font-medium hover:bg-gray-200 transition-colors"
+                  style={{color: '#825432'}}
                 >
-                  😄 Tell me a joke
+                  🗺️ Help me explore the site
                 </button>
                 <button
-                  onClick={() => handleQuickReply('superpower')}
-                  className="flex items-center gap-1 px-3 py-1.5 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-full text-xs font-medium hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors"
+                  onClick={() => handleQuickReply('standout')}
+                  className="flex items-center gap-1 px-3 py-2 bg-white border-2 border-gray-800 text-xs font-medium hover:bg-gray-200 transition-colors"
+                  style={{color: '#825432'}}
                 >
-                  ⚡ What's your superpower?
+                  🧠 What makes her stand out?
                 </button>
               </div>
             </div>
@@ -255,19 +245,25 @@ const ChatWidget: React.FC = () => {
                   className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-xs px-3 py-2 rounded-2xl text-sm ${
+                    className={`max-w-xs px-3 py-2 text-sm ${
                       message.sender === 'user'
-                        ? 'bg-blue-500 text-white rounded-br-md'
-                        : 'bg-gray-100 dark:bg-dark-300 text-gray-800 dark:text-white rounded-bl-md'
+                        ? 'bg-white border-2 border-gray-800'
+                        : 'bg-gray-200 border-2 border-gray-600'
                     }`}
+                    style={{color: '#825432'}}
                   >
                     <div className="flex items-start gap-2">
                       {message.sender === 'bot' && (
-                        <Bot className="w-3 h-3 mt-0.5 text-blue-500 dark:text-blue-400 flex-shrink-0" />
+                        <img 
+                          src="/Cute Pixel Art Robot.jpeg" 
+                          alt="AI Assistant" 
+                          className="w-4 h-4 mt-0.5 flex-shrink-0 object-cover object-center"
+                          style={{ transform: 'scale(1.2)' }}
+                        />
                       )}
                       <p className="text-xs leading-relaxed">{message.text}</p>
                       {message.sender === 'user' && (
-                        <User className="w-3 h-3 mt-0.5 text-blue-100 flex-shrink-0" />
+                        <span className="text-sm mt-0.5 flex-shrink-0">👤</span>
                       )}
                     </div>
                   </div>
@@ -276,13 +272,18 @@ const ChatWidget: React.FC = () => {
               
               {isTyping && (
                 <div className="flex justify-start">
-                  <div className="bg-gray-100 dark:bg-dark-300 text-gray-800 dark:text-white rounded-2xl rounded-bl-md px-3 py-2">
+                  <div className="bg-gray-200 border-2 border-gray-600 px-3 py-2" style={{color: '#825432'}}>
                     <div className="flex items-center gap-2">
-                      <Bot className="w-3 h-3 text-blue-500 dark:text-blue-400" />
+                      <img 
+                        src="/Cute Pixel Art Robot.jpeg" 
+                        alt="AI Assistant" 
+                        className="w-4 h-4 object-cover object-center"
+                        style={{ transform: 'scale(1.2)' }}
+                      />
                       <div className="flex space-x-1">
-                        <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce"></div>
-                        <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                        <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                        <div className="w-2 h-2 bg-gray-600 animate-bounce"></div>
+                        <div className="w-2 h-2 bg-gray-600 animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                        <div className="w-2 h-2 bg-gray-600 animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                       </div>
                     </div>
                   </div>
@@ -292,7 +293,7 @@ const ChatWidget: React.FC = () => {
             </div>
 
             {/* Chat Input */}
-            <div className="p-3 border-t border-gray-200 dark:border-dark-300 bg-white dark:bg-dark-100">
+            <div className="p-3 border-t-4 border-gray-800 bg-gray-100">
               <div className="flex gap-2">
                 <input
                   type="text"
@@ -300,13 +301,15 @@ const ChatWidget: React.FC = () => {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Type your message..."
-                  className="flex-1 px-3 py-2 rounded-xl border border-gray-200 dark:border-dark-300 bg-white dark:bg-dark-100 text-gray-800 dark:text-white text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
+                  className="flex-1 px-3 py-2 border-2 border-gray-800 bg-white text-sm focus:outline-none focus:border-gray-600 transition-colors"
+                  style={{color: '#825432'}}
                   disabled={isTyping}
                 />
                 <button
                   onClick={() => handleSendMessage()}
                   disabled={!inputValue.trim() || isTyping}
-                  className="px-3 py-2 bg-blue-500 hover:bg-blue-600 disabled:bg-gray-300 dark:disabled:bg-gray-600 text-white rounded-xl transition-colors disabled:cursor-not-allowed"
+                  className="px-3 py-2 bg-white border-2 border-gray-800 hover:bg-gray-200 disabled:bg-gray-300 text-sm transition-colors disabled:cursor-not-allowed"
+                  style={{color: '#825432'}}
                 >
                   <Send className="w-4 h-4" />
                 </button>

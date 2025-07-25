@@ -144,7 +144,7 @@ const Projects: React.FC = () => {
   }, [activeFilter]);
   
   return (
-    <section id="projects" className="section bg-gray-50 dark:bg-dark-200">
+    <section id="projects" className="section">
       <div className="container">
         <SectionHeading 
           title="My Projects" 
@@ -156,10 +156,10 @@ const Projects: React.FC = () => {
           {projectCategories.map((category, index) => (
             <motion.button
               key={index}
-              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+              className={`btn ${
                 activeFilter === category
-                  ? 'bg-primary-600 dark:bg-primary-500 text-white shadow-lg'
-                  : 'bg-white dark:bg-dark-100 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-300 border border-gray-200 dark:border-gray-700'
+                  ? 'btn-primary'
+                  : 'btn-outline'
               }`}
               onClick={() => setActiveFilter(category)}
               whileHover={{ y: -2 }}
@@ -183,7 +183,7 @@ const Projects: React.FC = () => {
             {visibleProjects.map((project, index) => (
               <motion.div
                 key={project.id}
-                className="bg-white dark:bg-dark-100 rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300"
+                className="card group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -192,12 +192,25 @@ const Projects: React.FC = () => {
               >
                 {/* Project Image */}
                 <div className="relative overflow-hidden h-48">
+                  {/* Minecraft Block Frame */}
+                  <div className="absolute inset-0 bg-white border-4 border-gray-800 shadow-lg">
+                    <div className="absolute inset-2 bg-gray-200 border-2 border-gray-600"></div>
+                  </div>
+                  
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="relative z-10 w-full h-full object-cover border-4 border-gray-800"
+                    style={{ 
+                      clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%)'
+                    }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  {/* Minecraft Block Details */}
+                  <div className="absolute top-2 left-2 w-4 h-4 bg-gray-600 border border-gray-800"></div>
+                  <div className="absolute top-2 right-2 w-4 h-4 bg-gray-600 border border-gray-800"></div>
+                  <div className="absolute bottom-2 left-2 w-4 h-4 bg-gray-600 border border-gray-800"></div>
+                  <div className="absolute bottom-2 right-2 w-4 h-4 bg-gray-600 border border-gray-800"></div>
                   
                   {/* Hover overlay with links */}
                   <div className="absolute inset-0 flex items-end justify-between p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -207,7 +220,7 @@ const Projects: React.FC = () => {
                           href={project.links.github} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="bg-white/90 hover:bg-white text-gray-800 dark:text-gray-200 rounded-lg transition-colors"
+                          className="bg-white/90 hover:bg-white text-gray-800 dark:text-gray-200 border-2 border-gray-800 transition-colors"
                           aria-label="GitHub Repository"
                         >
                           <Github size={18} />
@@ -218,7 +231,7 @@ const Projects: React.FC = () => {
                           href={project.links.demo} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="bg-white/90 hover:bg-white text-gray-800 dark:text-gray-200 rounded-lg transition-colors"
+                          className="bg-white/90 hover:bg-white text-gray-800 dark:text-gray-200 border-2 border-gray-800 transition-colors"
                           aria-label="Live Demo"
                         >
                           <ExternalLink size={18} />
@@ -230,10 +243,10 @@ const Projects: React.FC = () => {
                 
                 {/* Project Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3 text-gray-800 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors" style={{color: '#54C754'}}>
                     {project.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                  <p className="mb-4 leading-relaxed" style={{color: '#825432'}}>
                     {project.description}
                   </p>
                   
@@ -242,7 +255,8 @@ const Projects: React.FC = () => {
                     {project.technologies.map((tech, index) => (
                       <span 
                         key={index} 
-                        className="px-3 py-1 bg-gray-100 dark:bg-dark-300 text-gray-700 dark:text-gray-300 rounded-md text-sm font-medium"
+                        className="px-3 py-1 bg-gray-200 border border-gray-600 text-xs font-medium"
+                        style={{color: '#825432'}}
                       >
                         {tech}
                       </span>
@@ -255,7 +269,8 @@ const Projects: React.FC = () => {
                       href={project.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300 transition-colors group/link"
+                      className="inline-flex items-center font-medium transition-colors group/link"
+                      style={{color: '#54C754'}}
                     >
                       <Github size={16} className="mr-1" />
                       View on GitHub
@@ -271,7 +286,7 @@ const Projects: React.FC = () => {
           <div className="flex justify-center mt-8">
             <button
               onClick={() => setVisibleCount(c => c + 3)}
-              className="px-8 py-3 rounded-lg bg-primary-600 dark:bg-primary-500 text-white font-semibold shadow hover:bg-primary-700 dark:hover:bg-primary-400 transition-all duration-300"
+              className="btn btn-primary"
             >
               Load more
             </button>

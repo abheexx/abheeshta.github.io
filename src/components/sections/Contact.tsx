@@ -9,7 +9,7 @@ const education = [
     period: '2023 – Present',
     location: 'Gainesville, Florida',
     details: 'Currently pursuing graduate studies in Computer Science.',
-    color: 'from-blue-500 to-purple-500'
+            color: 'from-indigo-600 to-purple-700'
   },
   {
     institution: 'University of Florida',
@@ -40,7 +40,7 @@ const cardVariants = {
 
 const Education: React.FC = () => {
   return (
-    <section id="education" className="py-24 bg-gray-50 dark:bg-dark-200">
+    <section id="education" className="py-24">
       <div className="container mx-auto px-4">
         <SectionHeading title="Education" />
         <div className="relative max-w-2xl mx-auto mt-8">
@@ -57,30 +57,38 @@ const Education: React.FC = () => {
               >
                 {/* Timeline dot, perfectly aligned */}
                 <div className="flex flex-col items-center min-w-[2rem]">
-                  <span className="w-5 h-5 rounded-full border-4 border-primary-500 dark:border-primary-400 bg-white dark:bg-dark-200 shadow-md" />
+                  <span className="w-5 h-5 bg-gray-600 border-2 border-gray-800 shadow-md" />
                   {/* No vertical line between dots */}
                 </div>
                 {/* Card, visually connected to the line */}
-                <div className="flex-1 bg-white/80 dark:bg-dark-100/70 backdrop-blur-md rounded-2xl shadow-xl border border-gray-100 dark:border-dark-300 p-8 relative ml-0 md:ml-0 flex items-center justify-between"
-                  style={{ boxShadow: '0 8px 32px 0 rgba(80, 112, 255, 0.08), 0 1.5px 6px 0 rgba(80, 112, 255, 0.10)' }}
+                <div className="flex-1 card p-8 relative ml-0 md:ml-0 flex items-center justify-between"
                 >
                   <div>
                     <div className="flex items-center gap-2 mb-2">
-                      <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+                      <h3 className="text-xl md:text-2xl font-bold" style={{color: '#54C754'}}>
                         {edu.institution}
                       </h3>
                     </div>
-                    <div className={`text-lg font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r ${edu.color}`}>{edu.degree}</div>
-                    <div className="text-sm text-neutral-500 dark:text-neutral-400 mb-2 font-medium">{edu.period} &bull; {edu.location}</div>
-                    <div className="text-neutral-700 dark:text-neutral-300 text-sm font-normal">{edu.details}</div>
+                    <div className="text-lg font-bold mb-1" style={{color: '#54C754'}}>{edu.degree}</div>
+                    <div className="text-sm mb-2 font-medium" style={{color: '#825432'}}>{edu.period} &bull; {edu.location}</div>
+                    <div className="text-sm font-normal" style={{color: '#825432'}}>{edu.details}</div>
                   </div>
                   {/* Florida Gators logo for the first education box only */}
                   {i === 0 && (
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/en/thumb/1/14/Florida_Gators_gator_logo.svg/1200px-Florida_Gators_gator_logo.svg.png"
-                      alt="Florida Gators Logo"
-                      className="w-12 h-12 object-contain ml-4 hidden md:block"
-                    />
+                    <div className="relative">
+                      {/* Minecraft Block Frame for logo */}
+                      <div className="absolute inset-0 bg-white border-2 border-gray-800 shadow-lg">
+                        <div className="absolute inset-1 bg-gray-200 border border-gray-600"></div>
+                      </div>
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/en/thumb/1/14/Florida_Gators_gator_logo.svg/1200px-Florida_Gators_gator_logo.svg.png"
+                        alt="Florida Gators Logo"
+                        className="relative z-10 w-12 h-12 object-contain ml-4 hidden md:block border-2 border-gray-800"
+                        style={{ 
+                          clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%)'
+                        }}
+                      />
+                    </div>
                   )}
                 </div>
               </motion.div>

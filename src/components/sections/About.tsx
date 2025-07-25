@@ -11,7 +11,7 @@ const About: React.FC = () => {
   });
 
   return (
-    <section id="about" className="section bg-gray-50 dark:bg-dark-200 relative">
+    <section id="about" className="section relative">
       <div className="container">
         <SectionHeading 
           title="About Me" 
@@ -28,11 +28,55 @@ const About: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="relative"
             >
+              {/* Minecraft Block Frame */}
+              <div className="absolute inset-0 bg-white border-4 border-gray-800 shadow-2xl card">
+                <div className="absolute inset-2 bg-gray-200 border-2 border-gray-600"></div>
+              </div>
+              
               <img
                 src="/christmas-tree.jpg"
                 alt="Abheeshta Vemuri"
-                className="w-full max-w-xs rounded-2xl shadow-2xl object-cover object-center"
-                style={{ aspectRatio: '4/5', objectPosition: 'center 20%' }}
+                className="relative z-10 w-full max-w-xs object-cover object-center border-4 border-gray-800 shadow-lg"
+                style={{ 
+                  aspectRatio: '4/5', 
+                  objectPosition: 'center 20%',
+                  clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%)'
+                }}
+              />
+              
+              {/* Minecraft Block Details */}
+              <div className="absolute top-2 left-2 w-4 h-4 bg-gray-600 border border-gray-800"></div>
+              <div className="absolute top-2 right-2 w-4 h-4 bg-gray-600 border border-gray-800"></div>
+              <div className="absolute bottom-2 left-2 w-4 h-4 bg-gray-600 border border-gray-800"></div>
+              <div className="absolute bottom-2 right-2 w-4 h-4 bg-gray-600 border border-gray-800"></div>
+              
+              {/* Floating Particles */}
+              <motion.div
+                className="absolute -top-4 -right-4 w-3 h-3 bg-red-400 border border-red-600"
+                animate={{ 
+                  y: [-10, -20, -10],
+                  rotate: [0, 180, 360],
+                  opacity: [0.7, 1, 0.7]
+                }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <motion.div
+                className="absolute -bottom-4 -left-4 w-2 h-2 bg-blue-400 border border-blue-600"
+                animate={{ 
+                  y: [10, 20, 10],
+                  rotate: [360, 180, 0],
+                  opacity: [0.5, 1, 0.5]
+                }}
+                transition={{ 
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5
+                }}
               />
             </motion.div>
           </div>
@@ -44,22 +88,22 @@ const About: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8 }}
-              className="space-y-6 text-gray-600 dark:text-gray-300"
+              className="space-y-6"
             >
-              <p className="text-lg">
+              <p className="text-lg" style={{color: '#825432'}}>
               Hello! I'm Abheeshta Vemuri, a Computer Science graduate student at the University of Florida, passionate about building real-world AI systems that think, learn, and scale.
 
-              I specialize in engineering full-stack applications powered by machine learning and MLOps, whether it’s optimizing warehouse robots, predicting patient triage, or automating cloud workflows.
+              I specialize in engineering full-stack applications powered by machine learning and MLOps, whether it's optimizing warehouse robots, predicting patient triage, or automating cloud workflows.
 
 
               </p>
               
-              <p>
+              <p style={{color: '#825432'}}>
               With hands-on experience in tools like Kubernetes, Docker, GPT-4, and YOLOv8, I love creating AI solutions that are not only intelligent, but deployable and production-ready.
 
-              Currently, I’m working on large-scale AI pipelines at UF’s HiPerGator supercomputing cluster and building voice+vision agents in my free time.
+              Currently, I'm working on large-scale AI pipelines at UF's HiPerGator supercomputing cluster and building voice+vision agents in my free time.
 
-              Let’s build the future,one smart system at a time.
+              Let's build the future,one smart system at a time.
                 </p>
               
               <div className="pt-4 flex flex-col sm:flex-row gap-4">
@@ -70,7 +114,7 @@ const About: React.FC = () => {
                 <a
                   href="/Resume.pdf"
                   download
-                  className="inline-flex items-center px-5 py-2 border border-primary-500 dark:border-primary-400 rounded-lg text-primary-700 dark:text-primary-300 bg-white dark:bg-dark-200 font-semibold shadow-sm hover:bg-primary-50 dark:hover:bg-primary-900/20 hover:text-primary-900 transition-colors duration-200"
+                  className="btn btn-secondary"
                 >
                   <Lightbulb className="w-5 h-5 mr-2" />
                   Download Resume

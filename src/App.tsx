@@ -1,27 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from './components/layout/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Hero from './components/sections/Hero';
-import About from './components/sections/About';
-import Skills from './components/sections/Skills';
-import Projects from './components/sections/Projects';
-import Achievements from './components/sections/Achievements';
-import Experience from './components/sections/Experience';
-import Contact from './components/sections/Contact';
+import About from './pages/About';
+import Skills from './pages/Skills';
+import Projects from './pages/Projects';
+import Experience from './pages/Experience';
+import Achievements from './pages/Achievements';
 import Footer from './components/layout/Footer';
-import Cursor from './components/ui/Cursor';
+import SimpleFooter from './components/layout/SimpleFooter';
 import ChatWidget from './components/ui/ChatWidget';
+import Clouds from './components/ui/Clouds';
 import { AnimatePresence } from 'framer-motion';
 import Loader from './components/ui/Loader';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') as 'light' | 'dark' || 
-        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    }
-    return 'light';
-  });
 
   useEffect(() => {
     // Simulate loading time
@@ -32,41 +25,31 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
-  };
-
   return (
     <>
-      <Cursor />
       <AnimatePresence mode="wait">
         {loading ? (
           <Loader key="loader" />
         ) : (
-          <div className="min-h-screen flex flex-col">
-            <Navbar theme={theme} toggleTheme={toggleTheme} />
-            <main>
-              <Hero />
-              <About />
-              <Skills />
-              <Projects />
-              <Achievements />
-              <Experience />
-              <Contact />
-            </main>
-            <Footer />
+          <Router>
+            <Clouds />
             <ChatWidget />
-          </div>
+            <Routes>
+              <Route path="/" element={
+                <div className="h-screen flex flex-col">
+                  <main className="flex-1 overflow-hidden">
+                    <Hero />
+                  </main>
+                  <SimpleFooter />
+                </div>
+              } />
+              <Route path="/about" element={<About />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/experience" element={<Experience />} />
+              <Route path="/achievements" element={<Achievements />} />
+            </Routes>
+          </Router>
         )}
       </AnimatePresence>
     </>

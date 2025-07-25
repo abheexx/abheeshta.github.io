@@ -2,95 +2,89 @@ import React, { useEffect, useState } from 'react';
 
 const Cursor: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [hidden, setHidden] = useState(false);
-  const [clicked, setClicked] = useState(false);
-  const [linkHovered, setLinkHovered] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+  const [isClicking, setIsClicking] = useState(false);
+  const [isSelecting, setIsSelecting] = useState(false);
 
   useEffect(() => {
-    // Check if we're on a touch device
-    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-      setHidden(true);
-      return;
-    }
-
-    const addEventListeners = () => {
-      document.addEventListener('mousemove', onMouseMove);
-      document.addEventListener('mouseenter', onMouseEnter);
-      document.addEventListener('mouseleave', onMouseLeave);
-      document.addEventListener('mousedown', onMouseDown);
-      document.addEventListener('mouseup', onMouseUp);
-    };
-
-    const removeEventListeners = () => {
-      document.removeEventListener('mousemove', onMouseMove);
-      document.removeEventListener('mouseenter', onMouseEnter);
-      document.removeEventListener('mouseleave', onMouseLeave);
-      document.removeEventListener('mousedown', onMouseDown);
-      document.removeEventListener('mouseup', onMouseUp);
-    };
-
-    const onMouseMove = (e: MouseEvent) => {
+    const updateCursorPosition = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
 
-    const onMouseEnter = () => {
-      setHidden(false);
+    const handleMouseEnter = () => {
+      setIsHovering(true);
     };
 
-    const onMouseLeave = () => {
-      setHidden(true);
+    const handleMouseLeave = () => {
+      setIsHovering(false);
     };
 
-    const onMouseDown = () => {
-      setClicked(true);
+    const handleMouseDown = () => {
+      setIsClicking(true);
     };
 
-    const onMouseUp = () => {
-      setClicked(false);
+    const handleMouseUp = () => {
+      setIsClicking(false);
     };
 
-    // Handle hovering over links
-    const handleLinkHoverEvents = () => {
-      document.querySelectorAll('a, button').forEach(el => {
-        el.addEventListener('mouseenter', () => setLinkHovered(true));
-        el.addEventListener('mouseleave', () => setLinkHovered(false));
-      });
+    const handleTextSelection = () => {
+      setIsSelecting(true);
     };
 
-    addEventListeners();
-    handleLinkHoverEvents();
+    const handleTextSelectionEnd = () => {
+      setIsSelecting(false);
+    };
+
+    // Add event listeners
+    document.addEventListener('mousemove', updateCursorPosition);
+    document.addEventListener('mouseenter', handleMouseEnter);
+    document.addEventListener('mouseleave', handleMouseLeave);
+    document.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener('selectstart', handleTextSelection);
+    document.addEventListener('selectionchange', handleTextSelectionEnd);
+
+    // Add hover listeners for interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .btn, .card, input, textarea');
     
-    // Hide the default cursor
-    document.body.style.cursor = 'none';
-    
+    interactiveElements.forEach(element => {
+      element.addEventListener('mouseenter', () => setIsHovering(true));
+      element.addEventListener('mouseleave', () => setIsHovering(false));
+    });
+
     return () => {
-      removeEventListeners();
-      // Restore the default cursor
-      document.body.style.cursor = 'auto';
+      // Cleanup event listeners
+      document.removeEventListener('mousemove', updateCursorPosition);
+      document.removeEventListener('mouseenter', handleMouseEnter);
+      document.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('mousedown', handleMouseDown);
+      document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('selectstart', handleTextSelection);
+      document.removeEventListener('selectionchange', handleTextSelectionEnd);
     };
   }, []);
 
-  if (hidden) return null;
+  // Don't render cursor on touch devices
+  if (typeof window !== 'undefined' && 'ontouchstart' in window) {
+    return null;
+  }
+
+  const cursorClasses = [
+    'minecraft-cursor',
+    isHovering ? 'hover' : '',
+    isClicking ? 'click' : '',
+    isSelecting ? 'selecting' : ''
+  ].filter(Boolean).join(' ');
 
   return (
-    <>
-      <div
-        className={`cursor-dot ${clicked ? 'scale-50' : ''}`}
-        style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
-          transform: `translate(-50%, -50%) ${clicked ? 'scale(0.5)' : 'scale(1)'}`,
-        }}
-      />
-      <div
-        className={`cursor-outline ${linkHovered ? 'scale-150' : ''}`}
-        style={{
-          left: `${position.x}px`,
-          top: `${position.y}px`,
-          transform: `translate(-50%, -50%) ${clicked ? 'scale(0.75)' : ''} ${linkHovered ? 'scale(1.5)' : ''}`,
-        }}
-      />
-    </>
+    <div
+      className={cursorClasses}
+      style={{
+        left: `${position.x - 8}px`,
+        top: `${position.y - 8}px`,
+        transform: `translate(0, 0) ${isHovering ? 'scale(1.2)' : ''} ${isClicking ? 'scale(0.9)' : ''}`
+      }}
+    />
   );
 };
 

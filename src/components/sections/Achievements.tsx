@@ -27,7 +27,7 @@ const achievements = [
 
 const Achievements: React.FC = () => {
   return (
-    <section id="achievements" className="py-24 pb-48 bg-gray-50 dark:bg-dark-200">
+    <section id="achievements" className="py-24 pb-48">
       <div className="container mx-auto px-4">
         <SectionHeading title="Achievements" />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center">
@@ -37,16 +37,16 @@ const Achievements: React.FC = () => {
               className="flip-card w-full max-w-xs h-48 cursor-pointer"
               tabIndex={0}
             >
-              <div className="flip-card-inner rounded-2xl shadow-lg border border-gray-100 dark:border-dark-300 h-full">
+              <div className="flip-card-inner card h-full">
                 {/* Front */}
-                <div className="flip-card-front bg-white dark:bg-dark-100 flex items-center justify-center rounded-2xl h-full">
-                  <h3 className="text-lg font-semibold text-center text-gray-800 dark:text-white px-4">
+                <div className="flip-card-front flex items-center justify-center h-full">
+                  <h3 className="text-lg font-semibold text-center px-4" style={{color: '#54C754'}}>
                     {ach.title}
                   </h3>
                 </div>
                 {/* Back */}
-                <div className="flip-card-back bg-primary-50 dark:bg-primary-900/30 flex items-center justify-center rounded-2xl h-full">
-                  <p className="text-gray-700 dark:text-gray-200 text-sm px-4 text-center">
+                <div className="flip-card-back flex items-center justify-center h-full">
+                  <p className="text-sm px-4 text-center" style={{color: '#825432'}}>
                     {ach.description}
                   </p>
                 </div>

@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Sun, Moon, Github, Linkedin, Twitter } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Twitter } from 'lucide-react';
 
-interface NavbarProps {
-  theme: 'light' | 'dark';
-  toggleTheme: () => void;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
+const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -30,13 +25,12 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Achievements', href: '#achievements' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Education', href: '#education' }
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Skills', href: '/skills' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Experience', href: '/experience' },
+    { name: 'Achievements', href: '/achievements' }
   ];
 
   const socialLinks = [
@@ -52,7 +46,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
       transition={{ duration: 0.5 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? 'py-3 bg-white/80 dark:bg-dark-200/80 backdrop-blur-md shadow-md'
+          ? 'py-3 bg-white/80 backdrop-blur-md shadow-md'
           : 'py-5 bg-transparent'
       }`}
     >
@@ -64,7 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
               <motion.li key={link.name} whileHover={{ y: -2 }} whileTap={{ y: 0 }}>
                 <a
                   href={link.href}
-                  className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"
+                  className="text-gray-700 hover:text-primary-600 font-medium transition-colors"
                 >
                   {link.name}
                 </a>
@@ -74,33 +68,15 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
 
           <div className="flex items-center space-x-4">
             
-            <motion.button
-              onClick={toggleTheme}
-              className="p-2 rounded-full bg-gray-200 dark:bg-dark-100 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-dark-200 transition-colors"
-              whileHover={{ rotate: 15 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="Toggle theme"
-            >
-              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-            </motion.button>
           </div>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-4">
-          <motion.button
-            onClick={toggleTheme}
-            className="p-2 rounded-full bg-gray-200 dark:bg-dark-100 text-gray-700 dark:text-gray-300"
-            whileHover={{ rotate: 15 }}
-            whileTap={{ scale: 0.9 }}
-            aria-label="Toggle theme"
-          >
-            {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-          </motion.button>
           
           <motion.button
             onClick={toggleMenu}
-            className="p-2 text-gray-700 dark:text-gray-300"
+            className="p-2 text-gray-700"
             whileTap={{ scale: 0.9 }}
             aria-label="Menu"
           >
@@ -114,7 +90,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
         initial={false}
         animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
-        className="md:hidden overflow-hidden bg-white dark:bg-dark-200"
+        className="md:hidden overflow-hidden bg-white"
       >
         {isOpen && (
           <div className="container mx-auto py-4">
@@ -123,7 +99,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
                 <motion.li key={link.name} whileHover={{ x: 5 }}>
                   <a
                     href={link.href}
-                    className="block text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 font-medium"
+                    className="block text-gray-700 hover:text-primary-600 font-medium"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.name}
@@ -139,7 +115,7 @@ const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+                  className="text-gray-700 hover:text-primary-600"
                   whileHover={{ y: -2 }}
                   whileTap={{ y: 0 }}
                   aria-label={link.name}

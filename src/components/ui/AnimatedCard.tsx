@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useSound } from '../../hooks/useSound';
 
 interface AnimatedCardProps {
   children: React.ReactNode;
@@ -10,7 +9,6 @@ interface AnimatedCardProps {
 const AnimatedCard: React.FC<AnimatedCardProps> = ({ children, className = '' }) => {
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
-  const { playHoverSound, playClickSound } = useSound();
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
@@ -34,11 +32,11 @@ const AnimatedCard: React.FC<AnimatedCardProps> = ({ children, className = '' })
   };
 
   const handleMouseEnter = () => {
-    playHoverSound();
+    // Sound removed
   };
 
   const handleClick = () => {
-    playClickSound();
+    // Sound removed
   };
 
   return (

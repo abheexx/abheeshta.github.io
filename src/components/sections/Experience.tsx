@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
 import { useInView } from 'react-intersection-observer';
-import { Calendar, MapPin, Briefcase } from 'lucide-react';
+import { Calendar, MapPin, Briefcase, ChevronRight } from 'lucide-react';
 
 interface ExperienceItem {
   title: string;
@@ -11,6 +11,7 @@ interface ExperienceItem {
   period: string;
   description: string[];
   skills: string[];
+  color: string;
 }
 
 const Experience: React.FC = () => {
@@ -19,45 +20,50 @@ const Experience: React.FC = () => {
     threshold: 0.1,
   });
 
+  const [selectedExp, setSelectedExp] = useState<number | null>(null);
+
   const experiences: ExperienceItem[] = [
     {
       title: "Graduate Research Assistant",
       company: "University of Florida",
-      location: "GNV, Florida",
+      location: "Gainesville, FL",
       period: "Dec 2024 - Present",
       description: [
-        "Led the development of state-of-the-art machine learning models for predictive analytics",
-        "Collaborated with cross-functional teams to define ML requirements and solutions",
-        "Optimized model performance and reduced inference time by 40%",
-        "Mentored junior data scientists and engineers"
+        "Building AI pipelines to extract and classify publisher metadata using PyTorch and supercomputing resources",
+        "Fine-tuned PubDetectNet, improving metadata extraction accuracy by 20%",
+        "Built and containerized a CI/CD pipeline, deployed via Kubernetes",
+        "Engineered auto-scaling service for HiperGator HPC cluster, boosting MLOps efficiency by 15%"
       ],
-      skills: ["TensorFlow", "PyTorch", "MLOps", "Leadership"]
+      skills: ["PyTorch", "Docker", "Kubernetes", "GitLab", "Prometheus", "Grafana", "AWS S3"],
+      color: "#8B5CF6"
     },
     {
-      title: "Data Science Intern",
-      company: "NassCom",
+      title: "Software Engineer Intern",
+      company: "Nasscom",
       location: "New Delhi, India",
       period: "Aug 2023 - Dec 2023",
       description: [
-        "Analyzed large datasets to identify trends and patterns for business insights",
-        "Developed predictive models to support strategic decision-making",
-        "Created automated reporting systems to streamline data analysis processes",
-        "Collaborated with stakeholders to translate business requirements into technical solutions"
+        "Developed real-time, scalable APIs and cloud-native automation tools for government skilling systems",
+        "Built Kafka-based API with file handling for skilling platforms",
+        "Deployed containerized services on GCP with CI/CD integration",
+        "Created intelligent automation tools in Flask, reducing deployment time by 40%"
       ],
-      skills: ["Python", "Pandas", "Machine Learning", "Data Visualization"]
+      skills: ["Java", "Spring Boot", "Kafka", "Docker", "GCP", "Kubernetes", "Flask"],
+      color: "#06B6D4"
     },
     {
-      title: "Data Science Intern",
-      company: "Cognizant",
-      location: "Chennai, India",
-      period: "Jun 2023 - Aug 2023",
+      title: "Software Engineer Intern",
+      company: "Cognizant Technology Solutions",
+      location: "Hyderabad, India",
+      period: "May 2023 - Aug 2023",
       description: [
-        "Developed data pipelines and machine learning models for customer segmentation",
-        "Created interactive dashboards to visualize key business metrics",
-        "Implemented A/B testing frameworks to validate hypotheses",
-        "Collaborated with product teams to integrate ML features"
+        "Worked on backend healthcare data systems and CI/CD pipelines for secure and scalable deployments",
+        "Developed RESTful APIs for real-time healthcare data access",
+        "Built Spark pipelines integrated with Jenkins CI",
+        "Secured deployments using HashiCorp Vault and Consul"
       ],
-      skills: ["Python", "SQL", "Scikit-Learn", "Tableau"]
+      skills: ["Python", "Django", "MySQL", "Spark", "Jenkins", "Vault", "Consul"],
+      color: "#10B981"
     },
     {
       title: "Machine Learning Researcher",
@@ -70,7 +76,8 @@ const Experience: React.FC = () => {
         "Developed and validated experimental protocols",
         "Collaborated with international research teams"
       ],
-      skills: ["Deep Learning", "Research", "NLP", "Computer Vision"]
+      skills: ["Deep Learning", "Research", "NLP", "Computer Vision"],
+      color: "#F59E0B"
     }
   ];
 
@@ -93,8 +100,21 @@ const Experience: React.FC = () => {
     }
   };
 
+  const cardVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: { 
+      scale: 1, 
+      opacity: 1,
+      transition: { duration: 0.4 }
+    },
+    hover: { 
+      scale: 1.02,
+      transition: { duration: 0.2 }
+    }
+  };
+
   return (
-    <section id="experience" className="section bg-white dark:bg-dark-300">
+    <section id="experience" className="section">
       <div className="container">
         <SectionHeading 
           title="Experience" 
@@ -109,7 +129,7 @@ const Experience: React.FC = () => {
           animate={inView ? "visible" : "hidden"}
         >
           {/* Timeline line */}
-          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 h-full w-0.5 bg-gray-200 dark:bg-gray-700" />
+          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-primary-500 via-secondary-500 to-accent-500" />
           
           {experiences.map((exp, index) => (
             <motion.div
@@ -121,48 +141,92 @@ const Experience: React.FC = () => {
             >
               <div className="hidden md:block w-1/2" />
               
-              <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 -translate-y-1/4 w-8 h-8 rounded-full bg-primary-500 dark:bg-primary-400 z-10 shadow-lg border-4 border-white dark:border-dark-300" />
+
               
               <div className={`pl-10 md:pl-0 ${
                 index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'
               } md:w-1/2`}>
-                <div className="card p-6 transition-all duration-300 hover:shadow-xl bg-white dark:bg-dark-200">
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 mb-4">
-                    {exp.period}
-                  </span>
-                  
-                  <h3 className="text-xl font-bold text-gray-800 dark:text-white">{exp.title}</h3>
-                  
-                  <div className="flex items-center gap-1 mt-2 text-gray-600 dark:text-gray-400">
-                    <Briefcase size={16} />
-                    <span>{exp.company}</span>
+                <motion.div
+                  className="card p-6 transition-all duration-300 bg-white dark:bg-dark-200"
+                  style={{ borderLeftColor: exp.color }}
+                  variants={cardVariants}
+                  whileHover="hover"
+                >
+                  {/* Period Badge */}
+                  <div className="mb-4">
+                    <span 
+                      className="inline-block px-3 py-1 rounded-full text-xs font-medium text-white"
+                      style={{ backgroundColor: exp.color }}
+                    >
+                      {exp.period}
+                    </span>
                   </div>
                   
-                  <div className="flex items-center gap-1 mt-1 text-gray-600 dark:text-gray-400">
+                  {/* Title and Company */}
+                  <h3 className="text-xl font-bold mb-2" style={{color: '#54C754'}}>
+                    {exp.title}
+                  </h3>
+                  
+                  <div className="flex items-center gap-1 mb-1" style={{color: '#825432'}}>
+                    <Briefcase size={16} />
+                    <span className="font-medium">{exp.company}</span>
+                  </div>
+                  
+                  <div className="flex items-center gap-1 mb-4" style={{color: '#825432'}}>
                     <MapPin size={16} />
                     <span>{exp.location}</span>
                   </div>
                   
-                  <ul className="mt-4 space-y-2 text-gray-600 dark:text-gray-300">
-                    {exp.description.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <span className="inline-block w-1.5 h-1.5 bg-primary-500 dark:bg-primary-400 rounded-full mt-2 flex-shrink-0" />
-                        <span className="flex-1">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  {/* Skills */}
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {exp.skills.map((skill, i) => (
-                      <span 
-                        key={i} 
-                        className="px-3 py-1 bg-gray-100 dark:bg-dark-100 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium"
-                      >
-                        {skill}
-                      </span>
+                                          <span 
+                      key={i} 
+                      className="px-3 py-1 bg-gray-200 border border-gray-600 text-xs font-medium"
+                      style={{color: '#825432'}}
+                    >
+                      {skill}
+                    </span>
                     ))}
                   </div>
-                </div>
+
+                  {/* Expandable Description */}
+                  <motion.div
+                    initial={false}
+                    animate={{ 
+                      height: selectedExp === index ? 'auto' : 0,
+                      opacity: selectedExp === index ? 1 : 0
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="overflow-hidden"
+                  >
+                    <ul className="space-y-2 text-sm" style={{color: '#825432'}}>
+                      {exp.description.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <span 
+                            className="inline-block w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0"
+                            style={{ backgroundColor: exp.color }}
+                          />
+                          <span className="flex-1">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+
+                  {/* Read More Button */}
+                  <div className="flex justify-end mt-4">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedExp(selectedExp === index ? null : index);
+                      }}
+                      className="text-sm font-medium underline hover:no-underline transition-all duration-200"
+                      style={{ color: exp.color }}
+                    >
+                      {selectedExp === index ? 'Read Less' : 'Read More'}
+                    </button>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           ))}
