@@ -97,21 +97,6 @@ const Achievements: React.FC = () => {
   return (
     <div className="min-h-screen relative overflow-hidden">
       
-      {/* Back Button */}
-      <motion.button
-        onClick={() => navigate('/')}
-        className="fixed top-6 left-6 z-50 p-3 bg-white border-4 border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
-        style={{ boxShadow: '0 4px 0 #5D4037' }}
-        whileHover={{ scale: 1.05, y: -2 }}
-        whileTap={{ scale: 0.95 }}
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <ArrowLeft className="w-5 h-5" style={{color: '#825432'}} />
-        <span style={{color: '#825432'}}>Back to Home</span>
-      </motion.button>
-
       <div className="container mx-auto px-4 py-20 relative z-20">
         <motion.div
           variants={containerVariants}

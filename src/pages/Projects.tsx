@@ -19,7 +19,7 @@ const Projects: React.FC = () => {
       id: 1,
       title: "Code2Video",
       description: "An innovative project that converts code into video explanations, making programming concepts more accessible and visual.",
-      image: "/project1.jpg",
+      image: "/envelope.jpeg",
       technologies: ["Python", "Video Processing", "Code Analysis", "Educational Tech"],
       category: "ai",
       github: "https://github.com/abheexx/Code2Video",
@@ -30,7 +30,7 @@ const Projects: React.FC = () => {
       id: 2,
       title: "PdfExtract",
       description: "Advanced PDF processing tool that extracts, analyzes, and converts PDF content with high accuracy and multiple output formats.",
-      image: "/project2.jpg",
+      image: "/book.jpeg",
       technologies: ["Python", "PDF Processing", "Text Extraction", "Data Analysis"],
       category: "data",
       github: "https://github.com/abheexx/PdfExtract",
@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
       id: 3,
       title: "AI Email Reader",
       description: "Intelligent email processing system that uses AI to analyze, categorize, and extract key information from emails.",
-      image: "/project3.jpg",
+      image: "/camera.jpeg",
       technologies: ["Python", "Natural Language Processing", "Email Processing", "AI/ML"],
       category: "ai",
       github: "https://github.com/abheexx/AI_EmailReader",
@@ -55,7 +55,7 @@ const Projects: React.FC = () => {
       id: 4,
       title: "AI-Guided Smart Pick",
       description: "An intelligent system that uses AI to guide smart picking operations with enhanced efficiency and accuracy.",
-      image: "/project4.jpg",
+      image: "/comp.jpeg",
       technologies: ["Python", "AI/ML", "Computer Vision", "Automation", "Smart Systems"],
       category: "ai",
       github: "https://github.com/abheexx/ai-guided-smart-pick",
@@ -66,7 +66,7 @@ const Projects: React.FC = () => {
       id: 5,
       title: "Task Tracker API",
       description: "A beginner-friendly Flask API for managing tasks with RESTful endpoints and database integration.",
-      image: "/project5.jpg",
+      image: "/alarmclock.jpeg",
       technologies: ["Python", "Flask", "REST API", "SQLite", "CRUD Operations"],
       category: "backend",
       github: "https://github.com/abheexx/task-tracker-api",
@@ -75,10 +75,10 @@ const Projects: React.FC = () => {
     },
 
     {
-      id: 4,
+      id: 6,
       title: "Scribble2App",
       description: "Transform hand-drawn sketches into functional applications using AI-powered image recognition and code generation.",
-      image: "/project4.jpg",
+      image: "/dino.jpeg",
       technologies: ["Python", "Computer Vision", "AI/ML", "Image Processing", "Code Generation"],
       category: "ai",
       github: "https://github.com/abheexx/Scribble2App",
@@ -86,10 +86,10 @@ const Projects: React.FC = () => {
       featured: false
     },
     {
-      id: 5,
+      id: 7,
       title: "LiveLens",
       description: "Real-time computer vision application for live video processing and analysis with AI-powered insights.",
-      image: "/project13.jpg",
+      image: "/bulb.jpeg",
       technologies: ["Python", "Computer Vision", "Real-time Processing", "OpenCV", "AI/ML"],
       category: "ai",
       github: "https://github.com/abheexx/LiveLens",
@@ -97,10 +97,10 @@ const Projects: React.FC = () => {
       featured: false
     },
     {
-      id: 6,
+      id: 8,
       title: "PDF Reader Agent",
       description: "AI-powered PDF reading agent that can understand, summarize, and answer questions about PDF content.",
-      image: "/project14.jpg",
+      image: "/sign.jpeg",
       technologies: ["Python", "AI/ML", "PDF Processing", "Natural Language Processing"],
       category: "ai",
       github: "https://github.com/abheexx/Pdf_reader_agent",
@@ -108,10 +108,10 @@ const Projects: React.FC = () => {
       featured: false
     },
     {
-      id: 7,
+      id: 9,
       title: "PowerPredict",
       description: "Machine learning system for predictive analytics and forecasting with advanced statistical modeling capabilities.",
-      image: "/project15.jpg",
+      image: "/time.jpeg",
       technologies: ["Python", "Machine Learning", "Predictive Analytics", "Statistical Modeling"],
       category: "ai",
       github: "https://github.com/abheexx/PowerPredict",
@@ -348,89 +348,32 @@ const Projects: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center">
                     {/* Project Images */}
                     <div className="w-24 h-24 relative">
-                      {project.title === "Code2Video" && (
-                        <img 
-                          src="/Alarm Clock Pixel Art.jpeg" 
-                          alt="Code2Video" 
-                          className="w-full h-full object-cover rounded"
-                        />
-                      )}
-                      {project.title === "PdfExtract" && (
-                        <img 
-                          src="/_ (13).jpeg" 
-                          alt="PdfExtract" 
-                          className="w-full h-full object-cover rounded"
-                        />
-                      )}
-                      {project.title === "AI Email Reader" && (
-                        <img 
-                          src="/Envelope Pixel Art.jpeg" 
-                          alt="AI Email Reader" 
-                          className="w-full h-full object-cover rounded"
-                        />
-                      )}
-                      {project.title === "Scribble2App" && (
-                        <img 
-                          src="/Pixel Art, 8-Bit Art, Lego Art.jpeg" 
-                          alt="Scribble2App" 
-                          className="w-full h-full object-cover rounded"
-                        />
-                      )}
-                      {project.title === "LiveLens" && (
-                        <img 
-                          src="/Pixel Art, 8-Bit Art, Lego Art (1).jpeg" 
-                          alt="LiveLens" 
-                          className="w-full h-full object-cover rounded"
-                        />
-                      )}
-                      {project.title === "PDF Reader Agent" && (
-                        <img 
-                          src="/Smiley Face Pixel Art.jpeg" 
-                          alt="PDF Reader Agent" 
-                          className="w-full h-full object-cover rounded"
-                        />
-                      )}
-                      {project.title === "PowerPredict" && (
-                        <img 
-                          src="/_ (10).jpeg" 
-                          alt="PowerPredict" 
-                          className="w-full h-full object-cover rounded"
-                        />
-                      )}
-                      {project.title === "AI-Guided Smart Pick" && (
-                        <img 
-                          src="/_ (11).jpeg" 
-                          alt="AI-Guided Smart Pick" 
-                          className="w-full h-full object-cover rounded"
-                        />
-                      )}
-                      {project.title === "Task Tracker API" && (
-                        <img 
-                          src="/_ (12).jpeg" 
-                          alt="Task Tracker API" 
-                          className="w-full h-full object-cover rounded"
-                        />
-                      )}
-                      {/* Fallback for any other projects */}
-                      {!["Code2Video", "PdfExtract", "AI Email Reader", "Scribble2App", "LiveLens", "PDF Reader Agent", "PowerPredict", "AI-Guided Smart Pick", "Task Tracker API"].includes(project.title) && (
-                        <div className="w-full h-full bg-gray-400 flex items-center justify-center rounded">
-                          <span className="text-2xl">📁</span>
-                        </div>
-                      )}
+                      <img 
+                        src={project.image} 
+                        alt={project.title}
+                        className="w-full h-full object-cover rounded"
+                        onError={(e) => {
+                          console.error('❌ Project image failed to load:', project.image);
+                          e.currentTarget.style.display = 'none';
+                        }}
+                        onLoad={() => {
+                          console.log('✅ Project image loaded successfully:', project.image);
+                        }}
+                      />
                     </div>
                   </div>
+                </div>
                   {project.featured && (
                     <div className="absolute top-2 right-2 px-2 py-1 bg-yellow-500 border-2 border-gray-800 text-xs font-bold">
                       ⭐ Featured
                     </div>
                   )}
-                </div>
 
                 {/* Project Content */}
                 <div className="p-6">
-                                  <h3 className="text-xl font-bold mb-3" style={{color: '#54C754'}}>
-                  {project.title}
-                </h3>
+                  <h3 className="text-xl font-bold mb-3" style={{color: '#54C754'}}>
+                    {project.title}
+                  </h3>
                   <p className="mb-4 text-sm" style={{color: '#825432'}}>
                     {project.description}
                   </p>
@@ -446,34 +389,24 @@ const Projects: React.FC = () => {
                         {tech}
                       </span>
                     ))}
-                    {project.technologies.length > 4 && (
-                      <span
-                        className="px-2 py-1 bg-gray-200 border border-gray-600 text-xs"
-                        style={{color: '#825432'}}
-                      >
-                        +{project.technologies.length - 4} more
-                      </span>
-                    )}
                   </div>
-
-                  {/* Project Links */}
+                  
+                  {/* Action Buttons */}
                   <div className="flex gap-2">
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-white border-2 border-gray-800 text-sm font-medium hover:bg-gray-200 transition-colors"
-                      style={{color: '#825432'}}
+                      className="flex-1 btn btn-outline text-center"
                     >
-                      <Github className="w-4 h-4" />
+                      <Github size={16} className="mr-2" />
                       GitHub
                     </a>
                     <button
                       onClick={(e) => handleDemoClick(e, project)}
-                      className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-white border-2 border-gray-800 text-sm font-medium hover:bg-gray-200 transition-colors"
-                      style={{color: '#825432'}}
+                      className="flex-1 btn btn-primary"
                     >
-                      <Terminal className="w-4 h-4" />
+                      <ExternalLink size={16} className="mr-2" />
                       Demo
                     </button>
                   </div>

@@ -162,7 +162,7 @@ const ChatWidget: React.FC = () => {
         transition={{ duration: 0.5, delay: 1 }}
       >
         <img 
-          src="/Cute Pixel Art Robot.jpeg" 
+          src="/robo.jpeg" 
           alt="AI Assistant" 
           className="w-full h-full object-cover object-center"
           style={{ transform: 'scale(1.2)' }}
@@ -193,7 +193,7 @@ const ChatWidget: React.FC = () => {
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-gray-200 border-2 border-gray-600 flex items-center justify-center overflow-hidden">
                     <img 
-                      src="/Cute Pixel Art Robot.jpeg" 
+                      src="/robo.jpeg" 
                       alt="AI Assistant" 
                       className="w-full h-full object-cover object-center"
                       style={{ transform: 'scale(1.3)' }}
@@ -255,7 +255,7 @@ const ChatWidget: React.FC = () => {
                     <div className="flex items-start gap-2">
                       {message.sender === 'bot' && (
                         <img 
-                          src="/Cute Pixel Art Robot.jpeg" 
+                          src="/robo.jpeg" 
                           alt="AI Assistant" 
                           className="w-4 h-4 mt-0.5 flex-shrink-0 object-cover object-center"
                           style={{ transform: 'scale(1.2)' }}
@@ -275,7 +275,7 @@ const ChatWidget: React.FC = () => {
                   <div className="bg-gray-200 border-2 border-gray-600 px-3 py-2" style={{color: '#825432'}}>
                     <div className="flex items-center gap-2">
                       <img 
-                        src="/Cute Pixel Art Robot.jpeg" 
+                        src="/robo.jpeg" 
                         alt="AI Assistant" 
                         className="w-4 h-4 object-cover object-center"
                         style={{ transform: 'scale(1.2)' }}

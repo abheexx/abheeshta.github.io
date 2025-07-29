@@ -134,7 +134,7 @@ const Projects: React.FC = () => {
     },
   ];
   
-  const filteredProjects = projects.filter(project => project.category.includes(activeFilter));
+  const filteredProjects = projects; // Temporarily show all projects
   const visibleProjects = filteredProjects.slice(0, visibleCount);
   const hasMore = visibleCount < filteredProjects.length;
 
@@ -180,6 +180,11 @@ const Projects: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
+            {/* Debug info */}
+            <div className="col-span-full bg-red-500 text-white p-2 mb-4">
+              Debug: Showing {visibleProjects.length} projects out of {projects.length} total
+            </div>
+            
             {visibleProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -191,12 +196,24 @@ const Projects: React.FC = () => {
                 whileHover={{ y: -8 }}
               >
                 {/* Project Image */}
-                <div className="relative overflow-hidden h-48">
+                <div className="relative overflow-hidden h-48 bg-gray-200">
+                  {/* Debug info */}
+                  <div className="absolute top-0 left-0 bg-red-500 text-white text-xs p-1 z-50">
+                    {project.image}
+                  </div>
+                  
                   {/* Simple image rendering like case studies */}
                   <img 
                     src={project.image} 
                     alt={project.title}
                     className="w-full h-full object-cover"
+                    onError={(e) => {
+                      console.error('❌ Image failed to load:', project.image);
+                      e.currentTarget.style.display = 'none';
+                    }}
+                    onLoad={() => {
+                      console.log('✅ Image loaded successfully:', project.image);
+                    }}
                   />
                 </div>
                 
