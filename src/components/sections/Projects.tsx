@@ -26,7 +26,7 @@ const Projects: React.FC = () => {
       id: 1,
       title: "PDF Extract & Reader Agent",
       description: "An intelligent PDF processing system that extracts and analyzes text content using advanced AI techniques for document understanding and information retrieval.",
-      image: "/Envelope Pixel Art.jpeg", // PDF/Document
+      image: "/envelope.jpeg", // PDF/Document
       category: ["AI/ML", "NLP", "Data Processing"],
       technologies: ["Python", "AI/ML", "PDF Processing", "Text Analysis"],
       links: {
@@ -37,7 +37,7 @@ const Projects: React.FC = () => {
       id: 2,
       title: "AI Email Reader",
       description: "An intelligent email processing system that uses AI to read, categorize, and extract key information from emails for automated email management.",
-      image: "/Envelope Pixel Art.jpeg", // Email/AI
+      image: "/envelope.jpeg", // Email/AI
       category: ["AI/ML", "NLP"],
       technologies: ["Python", "Email Processing", "NLP"],
       links: {
@@ -48,7 +48,7 @@ const Projects: React.FC = () => {
       id: 3,
       title: "LiveLens - Real-time Vision",
       description: "A real-time computer vision application that processes live video streams for object detection, recognition, and analysis using advanced AI models.",
-      image: "/Smiley Face Pixel Art.jpeg", // Computer Vision/Camera
+      image: "/camera.jpeg", // Computer Vision/Camera
       category: ["AI/ML", "Computer Vision"],
       technologies: ["Python", "Computer Vision", "Real-time Processing", "AI/ML"],
       links: {
@@ -59,7 +59,7 @@ const Projects: React.FC = () => {
       id: 4,
       title: "PDF Reader Agent",
       description: "An AI-powered PDF reading agent that can understand, summarize, and extract insights from complex documents using natural language processing.",
-      image: "/Envelope Pixel Art.jpeg", // PDF/Document
+      image: "/book.jpeg", // PDF/Document
       category: ["AI/ML", "NLP", "Data Processing"],
       technologies: ["Python", "NLP", "PDF Processing", "AI Agents"],
       links: {
@@ -70,7 +70,7 @@ const Projects: React.FC = () => {
       id: 5,
       title: "PowerPredict - Energy Forecasting",
       description: "A machine learning system for predicting power consumption and energy demand using historical data and advanced forecasting algorithms.",
-      image: "/_ (13).jpeg", // Energy/Data
+      image: "/dino.jpeg", // Energy/Data
       category: ["AI/ML", "Data Processing"],
       technologies: ["Python", "Machine Learning", "Time Series", "Data Analysis"],
       links: {
@@ -81,7 +81,7 @@ const Projects: React.FC = () => {
       id: 6,
       title: "SmartRoute - Navigation System",
       description: "An intelligent routing system that optimizes navigation paths using AI algorithms for efficient route planning and traffic prediction.",
-      image: "/_ (12).jpeg", // Navigation/Map
+      image: "/time.jpeg", // Navigation/Map
       category: ["AI/ML", "Web Development"],
       technologies: ["Java", "AI/ML", "Navigation", "Optimization"],
       links: {
@@ -92,7 +92,7 @@ const Projects: React.FC = () => {
       id: 7,
       title: "AI Triage System",
       description: "An intelligent medical triage system that uses AI to prioritize patient cases based on symptoms and medical data for healthcare optimization.",
-      image: "/_ (11).jpeg", // Healthcare/AI
+      image: "/bulb.jpeg", // Healthcare/AI
       category: ["AI/ML", "NLP"],
       technologies: ["Python", "AI/ML", "Healthcare", "NLP"],
       links: {
@@ -103,7 +103,7 @@ const Projects: React.FC = () => {
       id: 8,
       title: "Sign Language Recognition",
       description: "A computer vision system that recognizes and translates sign language gestures in real-time using deep learning and image processing.",
-      image: "/_ (10).jpeg", // Sign Language/Hands
+      image: "/sign.jpeg", // Sign Language/Hands
       category: ["AI/ML", "Computer Vision"],
       technologies: ["Python", "Computer Vision", "Deep Learning", "Real-time"],
       links: {
@@ -114,7 +114,7 @@ const Projects: React.FC = () => {
       id: 9,
       title: "AI-Guided Smart Pick",
       description: "An intelligent picking system that uses AI to optimize warehouse operations and automate item selection for logistics efficiency.",
-      image: "/Pixel Art, 8-Bit Art, Lego Art.jpeg", // Warehouse/Logistics
+      image: "/comp.jpeg", // Warehouse/Logistics
       category: ["AI/ML", "Data Processing"],
       technologies: ["Python", "AI/ML", "Logistics", "automation"],
       links: {
@@ -125,7 +125,7 @@ const Projects: React.FC = () => {
       id: 10,
       title: "Task Tracker API",
       description: "A RESTful API for task management built with Flask, providing comprehensive task tracking and project management capabilities.",
-      image: "/Alarm Clock Pixel Art.jpeg", // API/Tasks
+      image: "/alarmclock.jpeg", // API/Tasks
       category: ["Web Development"],
       technologies: ["Python", "Flask", "REST API", "Database"],
       links: {
@@ -192,53 +192,12 @@ const Projects: React.FC = () => {
               >
                 {/* Project Image */}
                 <div className="relative overflow-hidden h-48">
-                  {/* Minecraft Block Frame */}
-                  <div className="absolute inset-0 bg-white border-4 border-gray-800 shadow-lg">
-                    <div className="absolute inset-2 bg-gray-200 border-2 border-gray-600"></div>
-                  </div>
-                  
+                  {/* Simple image rendering like case studies */}
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="relative z-10 w-full h-full object-cover border-4 border-gray-800"
-                    style={{ 
-                      clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%)'
-                    }}
+                    className="w-full h-full object-cover"
                   />
-                  
-                  {/* Minecraft Block Details */}
-                  <div className="absolute top-2 left-2 w-4 h-4 bg-gray-600 border border-gray-800"></div>
-                  <div className="absolute top-2 right-2 w-4 h-4 bg-gray-600 border border-gray-800"></div>
-                  <div className="absolute bottom-2 left-2 w-4 h-4 bg-gray-600 border border-gray-800"></div>
-                  <div className="absolute bottom-2 right-2 w-4 h-4 bg-gray-600 border border-gray-800"></div>
-                  
-                  {/* Hover overlay with links */}
-                  <div className="absolute inset-0 flex items-end justify-between p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="flex space-x-3">
-                      {project.links.github && (
-                        <a 
-                          href={project.links.github} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="bg-white/90 hover:bg-white text-gray-800 dark:text-gray-200 border-2 border-gray-800 transition-colors"
-                          aria-label="GitHub Repository"
-                        >
-                          <Github size={18} />
-                        </a>
-                      )}
-                      {project.links.demo && (
-                        <a 
-                          href={project.links.demo} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="bg-white/90 hover:bg-white text-gray-800 dark:text-gray-200 border-2 border-gray-800 transition-colors"
-                          aria-label="Live Demo"
-                        >
-                          <ExternalLink size={18} />
-                        </a>
-                      )}
-                    </div>
-                  </div>
                 </div>
                 
                 {/* Project Content */}

@@ -31,7 +31,7 @@ const NextPageButton: React.FC<NextPageButtonProps> = ({ className = "" }) => {
 
   return (
     <motion.div
-      className={`fixed bottom-8 right-8 z-40 ${className}`}
+      className={`fixed top-20 right-8 z-30 ${className}`}
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 0.5 }}
