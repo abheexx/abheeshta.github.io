@@ -11,33 +11,33 @@ const Clouds: React.FC = () => {
     },
     {
       id: 2,
-      position: { x: '60%', y: '15%' },
+      position: { x: '80%', y: '30%' },
       size: 'medium',
-      delay: 30
+      delay: 0
     },
     {
       id: 3,
-      position: { x: '80%', y: '25%' },
+      position: { x: '30%', y: '40%' },
       size: 'small',
-      delay: 60
+      delay: 0
     },
     {
       id: 4,
       position: { x: '20%', y: '50%' },
       size: 'medium',
-      delay: 90
+      delay: 0
     },
     {
       id: 5,
       position: { x: '70%', y: '60%' },
       size: 'large',
-      delay: 120
+      delay: 0
     },
     {
       id: 6,
       position: { x: '40%', y: '75%' },
       size: 'small',
-      delay: 150
+      delay: 0
     }
   ];
 
