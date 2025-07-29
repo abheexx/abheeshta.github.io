@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
       {/* Animated Christmas Tree */}
       <motion.div
         initial={{ y: '100vh', opacity: 0 }}
-        animate={{ y: '40vh', opacity: 1 }}
+        animate={showChristmasTree ? { y: '40vh', opacity: 1 } : { y: '100vh', opacity: 0 }}
         transition={{ 
           duration: 2, 
           ease: "easeOut",
@@ -62,11 +62,11 @@ const Hero: React.FC = () => {
         className="fixed inset-0 flex items-center justify-center pointer-events-none z-30"
       >
         <motion.img
-          src="/robo.jpeg"
+          src="/pic.jpg"
           alt="Christmas Tree"
-          className="max-w-xs md:max-w-sm lg:max-w-md border-4 border-red-500"
+          className="max-w-xs md:max-w-sm lg:max-w-md"
           initial={{ scale: 0.8 }}
-          animate={{ scale: 1 }}
+          animate={showChristmasTree ? { scale: 1 } : { scale: 0.8 }}
           transition={{ 
             duration: 1.5, 
             delay: 0.5,
