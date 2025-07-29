@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
         className="fixed inset-0 flex items-center justify-center pointer-events-none z-30"
       >
         <motion.img
-          src="/abhee.png"
+          src="/robo.jpeg"
           alt="Christmas Tree"
           className="max-w-xs md:max-w-sm lg:max-w-md border-4 border-red-500"
           initial={{ scale: 0.8 }}
