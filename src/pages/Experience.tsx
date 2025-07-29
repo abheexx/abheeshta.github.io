@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, MapPin, Calendar } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import NextPageButton from '../components/ui/NextPageButton';
 
 const Experience: React.FC = () => {
   const navigate = useNavigate();
@@ -286,6 +287,9 @@ const Experience: React.FC = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Next Page Button */}
+      <NextPageButton />
     </div>
   );
 };

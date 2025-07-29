@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import NextPageButton from '../components/ui/NextPageButton';
 
 const About: React.FC = () => {
   const navigate = useNavigate();
@@ -107,19 +108,19 @@ const About: React.FC = () => {
                   🧠 MS Student at University of Florida!
                 </h2>
                 <p className="mb-3 text-sm" style={{color: '#825432'}}>
-                I’m passionate about solving complex, real-world problems through intelligent,
+                I'm passionate about solving complex, real-world problems through intelligent,
                 human-centered technology. With hands-on experience across software engineering, 
                 AI/ML, and product thinking, I thrive at the intersection of code, creativity, and impact.
                 </p>
                 <p className="mb-3 text-sm" style={{color: '#825432'}}>
                 I specialize in machine learning, deep learning, and data-driven systems. 
-                I’ve built scalable AI products and backend systems that not only function well, 
+                I've built scalable AI products and backend systems that not only function well, 
                 but are thoughtfully designed to address real user needs.
                 </p>
                 <p className="text-sm" style={{color: '#825432'}}>
-                Whether I’m writing production-grade code, shaping product strategy, 
-                or optimizing model performance—I’m driven by one goal: to build systems that matter.
-                Outside of work, you’ll find me exploring emerging technologies, contributing to open-source projects, 
+                Whether I'm writing production-grade code, shaping product strategy, 
+                or optimizing model performance - I'm driven by one goal: to build systems that matter.
+                Outside of work, you'll find me exploring emerging technologies, contributing to open-source projects, 
                 or sharing ideas with the tech community.
 
 
@@ -149,6 +150,9 @@ const About: React.FC = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Next Page Button */}
+      <NextPageButton />
     </div>
   );
 };

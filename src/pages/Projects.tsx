@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ExternalLink, Github, X, Terminal, FileText } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import NextPageButton from '../components/ui/NextPageButton';
 
 const Projects: React.FC = () => {
   const navigate = useNavigate();
@@ -718,6 +719,9 @@ const Projects: React.FC = () => {
 
         </motion.div>
       </div>
+
+      {/* Next Page Button */}
+      <NextPageButton />
     </div>
   );
 };

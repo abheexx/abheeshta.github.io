@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Trophy, Award, Star, Target } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import NextPageButton from '../components/ui/NextPageButton';
 
 const Achievements: React.FC = () => {
   const navigate = useNavigate();
@@ -213,6 +214,9 @@ const Achievements: React.FC = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Next Page Button */}
+      <NextPageButton />
     </div>
   );
 };

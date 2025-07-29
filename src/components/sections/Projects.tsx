@@ -26,7 +26,7 @@ const Projects: React.FC = () => {
       id: 1,
       title: "PDF Extract & Reader Agent",
       description: "An intelligent PDF processing system that extracts and analyzes text content using advanced AI techniques for document understanding and information retrieval.",
-      image: "/projects/pdf.png", // PDF/Document
+      image: "/Envelope Pixel Art.jpeg", // PDF/Document
       category: ["AI/ML", "NLP", "Data Processing"],
       technologies: ["Python", "AI/ML", "PDF Processing", "Text Analysis"],
       links: {
@@ -37,7 +37,7 @@ const Projects: React.FC = () => {
       id: 2,
       title: "AI Email Reader",
       description: "An intelligent email processing system that uses AI to read, categorize, and extract key information from emails for automated email management.",
-      image: "/projects/email.png", // Email/AI
+      image: "/Envelope Pixel Art.jpeg", // Email/AI
       category: ["AI/ML", "NLP"],
       technologies: ["Python", "Email Processing", "NLP"],
       links: {
@@ -48,9 +48,9 @@ const Projects: React.FC = () => {
       id: 3,
       title: "LiveLens - Real-time Vision",
       description: "A real-time computer vision application that processes live video streams for object detection, recognition, and analysis using advanced AI models.",
-      image: "/projects/camera.png", // Computer Vision/Camera
+      image: "/Smiley Face Pixel Art.jpeg", // Computer Vision/Camera
       category: ["AI/ML", "Computer Vision"],
-      technologies: ["Python", "Computer Vision", "Real-time Processing", "/ML"],
+      technologies: ["Python", "Computer Vision", "Real-time Processing", "AI/ML"],
       links: {
         github: "https://github.com/abheexx/LiveLens"
       }
@@ -59,7 +59,7 @@ const Projects: React.FC = () => {
       id: 4,
       title: "PDF Reader Agent",
       description: "An AI-powered PDF reading agent that can understand, summarize, and extract insights from complex documents using natural language processing.",
-      image: "/projects/pdf.png", // PDF/Document
+      image: "/Envelope Pixel Art.jpeg", // PDF/Document
       category: ["AI/ML", "NLP", "Data Processing"],
       technologies: ["Python", "NLP", "PDF Processing", "AI Agents"],
       links: {
@@ -70,7 +70,7 @@ const Projects: React.FC = () => {
       id: 5,
       title: "PowerPredict - Energy Forecasting",
       description: "A machine learning system for predicting power consumption and energy demand using historical data and advanced forecasting algorithms.",
-      image: "/projects/energy.png", // Energy/Data
+      image: "/_ (13).jpeg", // Energy/Data
       category: ["AI/ML", "Data Processing"],
       technologies: ["Python", "Machine Learning", "Time Series", "Data Analysis"],
       links: {
@@ -81,9 +81,9 @@ const Projects: React.FC = () => {
       id: 6,
       title: "SmartRoute - Navigation System",
       description: "An intelligent routing system that optimizes navigation paths using AI algorithms for efficient route planning and traffic prediction.",
-      image: "/projects/navigation.png", // Navigation/Map
+      image: "/_ (12).jpeg", // Navigation/Map
       category: ["AI/ML", "Web Development"],
-      technologies: ["Java", "I/ML", "Navigation", "Optimization"],
+      technologies: ["Java", "AI/ML", "Navigation", "Optimization"],
       links: {
         github: "https://github.com/abheexx/SmartRoute"
       }
@@ -92,7 +92,7 @@ const Projects: React.FC = () => {
       id: 7,
       title: "AI Triage System",
       description: "An intelligent medical triage system that uses AI to prioritize patient cases based on symptoms and medical data for healthcare optimization.",
-      image: "/projects/healthcare.png", // Healthcare/AI
+      image: "/_ (11).jpeg", // Healthcare/AI
       category: ["AI/ML", "NLP"],
       technologies: ["Python", "AI/ML", "Healthcare", "NLP"],
       links: {
@@ -103,7 +103,7 @@ const Projects: React.FC = () => {
       id: 8,
       title: "Sign Language Recognition",
       description: "A computer vision system that recognizes and translates sign language gestures in real-time using deep learning and image processing.",
-      image: "/projects/sign-language.png", // Sign Language/Hands
+      image: "/_ (10).jpeg", // Sign Language/Hands
       category: ["AI/ML", "Computer Vision"],
       technologies: ["Python", "Computer Vision", "Deep Learning", "Real-time"],
       links: {
@@ -114,7 +114,7 @@ const Projects: React.FC = () => {
       id: 9,
       title: "AI-Guided Smart Pick",
       description: "An intelligent picking system that uses AI to optimize warehouse operations and automate item selection for logistics efficiency.",
-      image: "/projects/warehouse.png", // Warehouse/Logistics
+      image: "/Pixel Art, 8-Bit Art, Lego Art.jpeg", // Warehouse/Logistics
       category: ["AI/ML", "Data Processing"],
       technologies: ["Python", "AI/ML", "Logistics", "automation"],
       links: {
@@ -125,7 +125,7 @@ const Projects: React.FC = () => {
       id: 10,
       title: "Task Tracker API",
       description: "A RESTful API for task management built with Flask, providing comprehensive task tracking and project management capabilities.",
-      image: "/projects/api.png", // API/Tasks
+      image: "/Alarm Clock Pixel Art.jpeg", // API/Tasks
       category: ["Web Development"],
       technologies: ["Python", "Flask", "REST API", "Database"],
       links: {
