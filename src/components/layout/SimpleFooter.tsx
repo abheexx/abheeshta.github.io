@@ -49,7 +49,7 @@ const SimpleFooter: React.FC = () => {
           </div>
           <div className="relative group">
             <a 
-              href="/resume.pdf" 
+              href="/AbheeshtaResume_.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               className="p-2 bg-white border-2 border-gray-800 hover:bg-gray-200 transition-colors"

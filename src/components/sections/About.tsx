@@ -112,7 +112,7 @@ const About: React.FC = () => {
                   View Projects
                 </a>
                 <a
-                  href="/Resume.pdf"
+                  href="/AbheeshtaResume_.pdf"
                   download
                   className="btn btn-secondary"
                 >
