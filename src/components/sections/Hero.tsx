@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
       {/* Animated Christmas Tree */}
       <motion.div
         initial={{ y: '100vh', opacity: 0 }}
-        animate={showChristmasTree ? { y: '40vh', opacity: 1 } : { y: '100vh', opacity: 0 }}
+        animate={{ y: '40vh', opacity: 1 }} // Temporarily force visible
         transition={{ 
           duration: 2, 
           ease: "easeOut",
@@ -60,17 +60,25 @@ const Hero: React.FC = () => {
           damping: 15
         }}
         className="fixed inset-0 flex items-center justify-center pointer-events-none z-30"
+        style={{ backgroundColor: 'rgba(255, 0, 0, 0.1)' }} // Temporary debug background
       >
         <motion.img
           src="/abhee.png"
           alt="Christmas Tree"
           className="max-w-xs md:max-w-sm lg:max-w-md"
           initial={{ scale: 0.8 }}
-          animate={showChristmasTree ? { scale: 1 } : { scale: 0.8 }}
+          animate={{ scale: 1 }} // Temporarily force visible
           transition={{ 
             duration: 1.5, 
             delay: 0.5,
             ease: "easeOut"
+          }}
+          onError={(e) => {
+            console.error('❌ Christmas tree image failed to load:', '/abhee.png');
+            e.currentTarget.style.display = 'none';
+          }}
+          onLoad={() => {
+            console.log('✅ Christmas tree image loaded successfully:', '/abhee.png');
           }}
         />
       </motion.div>
