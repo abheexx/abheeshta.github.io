@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
         className="fixed inset-0 flex items-center justify-center pointer-events-none z-30"
       >
         <motion.img
-          src="/pic.jpg"
+          src="/abhee.png"
           alt="Christmas Tree"
           className="max-w-xs md:max-w-sm lg:max-w-md"
           initial={{ scale: 0.8 }}
@@ -71,6 +71,14 @@ const Hero: React.FC = () => {
             duration: 1.5, 
             delay: 0.5,
             ease: "easeOut"
+          }}
+          onError={(e) => {
+            console.error('❌ abhee.png failed to load');
+            // Fallback to a working image
+            e.currentTarget.src = '/pic.jpg';
+          }}
+          onLoad={() => {
+            console.log('✅ abhee.png loaded successfully');
           }}
         />
       </motion.div>
