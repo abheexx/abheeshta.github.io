@@ -131,7 +131,7 @@ const Hero: React.FC = () => {
               style={{color: '#825432'}}
             >
               <TypingEffect 
-                text="Building AI products that solve real-world problems, fast and impactfully."
+                text="Personal portfolio with Minecraft vibes, full-stack builds, and an AI chatbot that knows me better than I do!"
                 speed={50}
               />
             </motion.p>
