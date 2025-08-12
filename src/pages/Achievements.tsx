@@ -148,12 +148,9 @@ const Achievements: React.FC = () => {
                       </h3>
                       <p className="mb-3 text-sm" style={{color: '#825432'}} dangerouslySetInnerHTML={{ __html: achievement.description }}>
                       </p>
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-start">
                         <span className="text-xs font-medium px-2 py-1 bg-gray-200 border border-gray-600" style={{color: '#825432'}}>
                           {achievement.category}
-                        </span>
-                        <span className="text-xs" style={{color: '#825432'}}>
-                          {achievement.date}
                         </span>
                       </div>
                     </div>

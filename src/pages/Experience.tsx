@@ -22,7 +22,7 @@ const Experience: React.FC = () => {
       title: "AI Engineer Intern",
       company: "Incepta Partners, Inc.",
       location: "Remote / United States",
-      period: "May 2025 - Present",
+      period: "July 2025 - Present",
       description: "Developing AI-powered automation tools and internal assistants for the insurance industry, focusing on GenAI pipelines and RAG-based applications.",
       technologies: ["Python", "LangChain", "OpenAI API", "Pinecone", "FastAPI", "Vercel", "Git", "TypeScript"],
       achievements: [
