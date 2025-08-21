@@ -205,7 +205,7 @@ const Achievements: React.FC = () => {
                 Demonstrating strong professional visibility and global reach through my online portfolio
               </p>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                 <div className="text-center">
                   <div className="text-4xl font-bold mb-2" style={{color: '#8B5CF6'}}>
                     10K+
@@ -223,47 +223,6 @@ const Achievements: React.FC = () => {
                     5K+
                   </div>
                   <div style={{color: '#825432'}}>Unique Visitors</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold mb-2" style={{color: '#F59E0B'}}>
-                    500+
-                  </div>
-                  <div style={{color: '#825432'}}>Social Shares</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold mb-2" style={{color: '#EF4444'}}>
-                    25+
-                  </div>
-                  <div style={{color: '#825432'}}>Countries Reached</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold mb-2" style={{color: '#8B5CF6'}}>
-                    150%
-                  </div>
-                  <div style={{color: '#825432'}}>Monthly Growth</div>
-                </div>
-              </div>
-
-              <div className="text-center">
-                <div className="inline-block bg-white border-4 border-gray-800 p-6" style={{ boxShadow: '0 4px 0 #5D4037' }}>
-                  <h3 className="text-xl font-bold mb-3" style={{color: '#54C754'}}>
-                    🚀 Professional Impact
-                  </h3>
-                  <p className="mb-4" style={{color: '#825432'}}>
-                    My portfolio has achieved significant reach and engagement, demonstrating strong professional visibility 
-                    and the ability to connect with the tech community globally.
-                  </p>
-                  <div className="flex flex-wrap justify-center gap-4 text-sm">
-                    <span className="px-3 py-1 bg-gray-200 border border-gray-600" style={{color: '#825432'}}>
-                      📈 High Engagement Rate
-                    </span>
-                    <span className="px-3 py-1 bg-gray-200 border border-gray-600" style={{color: '#825432'}}>
-                      🌍 Global Reach
-                    </span>
-                    <span className="px-3 py-1 bg-gray-200 border border-gray-600" style={{color: '#825432'}}>
-                      💼 Professional Networking
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>
