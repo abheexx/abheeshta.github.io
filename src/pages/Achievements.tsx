@@ -105,8 +105,8 @@ const Achievements: React.FC = () => {
           className="max-w-6xl mx-auto"
         >
           {/* Header */}
-          <motion.div variants={itemVariants} className="text-center mb-12">
-            <h1 className="text-5xl font-bold" style={{
+          <motion.div variants={itemVariants} className="text-center mb-8 sm:mb-12">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold" style={{
               color: '#54C754',
               textShadow: `
                 -2px -2px 0 #825432,
@@ -129,24 +129,24 @@ const Achievements: React.FC = () => {
 
           {/* All Achievements Grid */}
           <motion.div variants={itemVariants}>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {achievements.map((achievement) => (
                 <motion.div
                   key={achievement.id}
-                  className="card p-6 group"
+                  className="card p-4 sm:p-6 group"
                   whileHover={{ 
                     y: -5,
                     boxShadow: "0 8px 0 #5D4037"
                   }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="text-3xl">{achievement.icon}</div>
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="text-2xl sm:text-3xl">{achievement.icon}</div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold mb-2" style={{color: '#54C754'}}>
+                      <h3 className="text-base sm:text-lg font-bold mb-2" style={{color: '#54C754'}}>
                         {achievement.title}
                       </h3>
-                      <p className="mb-3 text-sm" style={{color: '#825432'}} dangerouslySetInnerHTML={{ __html: achievement.description }}>
+                      <p className="mb-3 text-xs sm:text-sm" style={{color: '#825432'}} dangerouslySetInnerHTML={{ __html: achievement.description }}>
                       </p>
                       <div className="flex items-center justify-start">
                         <span className="text-xs font-medium px-2 py-1 bg-gray-200 border border-gray-600" style={{color: '#825432'}}>
@@ -161,68 +161,68 @@ const Achievements: React.FC = () => {
           </motion.div>
 
           {/* Stats Section */}
-          <motion.div variants={itemVariants} className="mt-16">
-            <div className="card p-8">
-              <h2 className="text-3xl font-bold mb-8 text-center" style={{color: '#54C754'}}>
+          <motion.div variants={itemVariants} className="mt-12 sm:mt-16">
+            <div className="card p-6 sm:p-8">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center" style={{color: '#54C754'}}>
                 📊 Achievement Statistics
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
                 <div className="text-center">
-                  <div className="text-4xl font-bold mb-2" style={{color: '#54C754'}}>
+                  <div className="text-2xl sm:text-4xl font-bold mb-2" style={{color: '#54C754'}}>
                     {achievements.length}
                   </div>
-                  <div style={{color: '#825432'}}>Total Achievements</div>
+                  <div className="text-xs sm:text-sm" style={{color: '#825432'}}>Total Achievements</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold mb-2" style={{color: '#54C754'}}>
+                  <div className="text-2xl sm:text-4xl font-bold mb-2" style={{color: '#54C754'}}>
                     {achievements.filter(a => a.featured).length}
                   </div>
-                  <div style={{color: '#825432'}}>Featured</div>
+                  <div className="text-xs sm:text-sm" style={{color: '#825432'}}>Featured</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold mb-2" style={{color: '#54C754'}}>
+                  <div className="text-2xl sm:text-4xl font-bold mb-2" style={{color: '#54C754'}}>
                     {new Set(achievements.map(a => a.category)).size}
                   </div>
-                  <div style={{color: '#825432'}}>Categories</div>
+                  <div className="text-xs sm:text-sm" style={{color: '#825432'}}>Categories</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold mb-2" style={{color: '#54C754'}}>
+                  <div className="text-2xl sm:text-4xl font-bold mb-2" style={{color: '#54C754'}}>
                     3+
                   </div>
-                  <div style={{color: '#825432'}}>Years Active</div>
+                  <div className="text-xs sm:text-sm" style={{color: '#825432'}}>Years Active</div>
                 </div>
               </div>
             </div>
           </motion.div>
 
           {/* Website Performance Section */}
-          <motion.div variants={itemVariants} className="mt-16">
-            <div className="card p-8">
-              <h2 className="text-3xl font-bold mb-8 text-center" style={{color: '#54C754'}}>
+          <motion.div variants={itemVariants} className="mt-12 sm:mt-16">
+            <div className="card p-6 sm:p-8">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center" style={{color: '#54C754'}}>
                 🌐 Portfolio Website Impact
               </h2>
-              <p className="text-center mb-8" style={{color: '#825432'}}>
+              <p className="text-center mb-6 sm:mb-8 text-sm sm:text-base" style={{color: '#825432'}}>
                 Demonstrating strong professional visibility and global reach through my online portfolio
               </p>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
                 <div className="text-center">
-                  <div className="text-4xl font-bold mb-2" style={{color: '#8B5CF6'}}>
+                  <div className="text-2xl sm:text-4xl font-bold mb-2" style={{color: '#8B5CF6'}}>
                     10K+
                   </div>
-                  <div style={{color: '#825432'}}>Total Impressions</div>
+                  <div className="text-xs sm:text-sm" style={{color: '#825432'}}>Total Impressions</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold mb-2" style={{color: '#06B6D4'}}>
+                  <div className="text-2xl sm:text-4xl font-bold mb-2" style={{color: '#06B6D4'}}>
                     2.5K+
                   </div>
-                  <div style={{color: '#825432'}}>Link Clicks</div>
+                  <div className="text-xs sm:text-sm" style={{color: '#825432'}}>Link Clicks</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-4xl font-bold mb-2" style={{color: '#10B981'}}>
+                  <div className="text-2xl sm:text-4xl font-bold mb-2" style={{color: '#10B981'}}>
                     5K+
                   </div>
-                  <div style={{color: '#825432'}}>Unique Visitors</div>
+                  <div className="text-xs sm:text-sm" style={{color: '#825432'}}>Unique Visitors</div>
                 </div>
               </div>
             </div>

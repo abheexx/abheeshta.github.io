@@ -5,6 +5,7 @@ interface TypingEffectProps {
   text: string;
   speed?: number;
   className?: string;
+  style?: React.CSSProperties;
   onComplete?: () => void;
 }
 
@@ -12,6 +13,7 @@ const TypingEffect: React.FC<TypingEffectProps> = ({
   text, 
   speed = 50, 
   className = '',
+  style = {},
   onComplete 
 }) => {
   const [displayText, setDisplayText] = useState('');
@@ -40,7 +42,7 @@ const TypingEffect: React.FC<TypingEffectProps> = ({
   }, []);
 
   return (
-    <span className={className}>
+    <span className={className} style={style}>
       {displayText}
       <motion.span
         className="inline-block w-0.5 h-5 bg-primary-500 dark:bg-primary-400 ml-1"

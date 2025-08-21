@@ -89,88 +89,70 @@ const Hero: React.FC = () => {
     >
       
       <div className="container mx-auto relative z-20 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-center text-center">
+        <div className="flex flex-col items-center justify-center text-center min-h-screen py-8 sm:py-12 lg:py-16">
           <motion.div 
-            className="w-full max-w-2xl"
+            className="w-full max-w-2xl px-4 sm:px-6"
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             ref={ref}
           >
-            <motion.div variants={itemVariants} className="inline-block mb-4 px-4 py-2 bg-white border-2 border-gray-800 shadow-lg">
-              <span className="font-medium" style={{color: '#825432'}}>⛏️ Hi there! I'm</span>
+            <motion.div variants={itemVariants} className="inline-block mb-4 px-3 py-2 sm:px-4 sm:py-2 bg-white border-2 border-gray-800 shadow-lg">
+              <span className="text-xs sm:text-sm font-bold" style={{color: '#54C754'}}>
+                🚀 AI Engineer & Data Scientist
+              </span>
             </motion.div>
             
             <motion.h1 
               variants={itemVariants}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-center -ml-12"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+              style={{
+                color: '#54C754',
+                textShadow: `
+                  -2px -2px 0 #825432,
+                  2px -2px 0 #825432,
+                  -2px 2px 0 #825432,
+                  2px 2px 0 #825432,
+                  -1px -1px 0 #825432,
+                  1px -1px 0 #825432,
+                  -1px 1px 0 #825432,
+                  1px 1px 0 #825432
+                `
+              }}
             >
-              <span 
-                style={{
-                  color: '#54C754',
-                  whiteSpace: 'nowrap',
-                  textShadow: `
-                    -2px -2px 0 #825432,
-                    2px -2px 0 #825432,
-                    -2px 2px 0 #825432,
-                    2px 2px 0 #825432,
-                    -1px -1px 0 #825432,
-                    1px -1px 0 #825432,
-                    -1px 1px 0 #825432,
-                    1px 1px 0 #825432
-                  `
-                }}
-              >
-                Abheeshta Vemuri
-              </span>
+              Abheeshta Vemuri
             </motion.h1>
             
             <motion.p 
               variants={itemVariants}
-              className="text-sm md:text-base mb-8 max-w-4xl whitespace-nowrap -ml-8 font-bold"
+              className="text-lg sm:text-xl md:text-2xl mb-8 leading-relaxed px-2 sm:px-4"
               style={{color: '#825432'}}
             >
-              <TypingEffect 
-                text="Blending tech and creativity to solve real-world user problems..!"
-                speed={50}
-              />
+              Building intelligent systems that think, learn, and scale
             </motion.p>
             
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 justify-center">
-              <Link 
-                to="/about" 
-                className="btn btn-primary"
-              >
-                About Me
+            <motion.div variants={itemVariants} className="mb-8">
+              <TypingEffect 
+                text="Passionate about AI, Machine Learning, and creating solutions that make a difference."
+                className="text-base sm:text-lg md:text-xl"
+                speed={50}
+                style={{color: '#825432'}}
+              />
+            </motion.div>
+            
+            <motion.div 
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            >
+              <Link to="/projects" className="btn btn-primary w-full sm:w-auto text-center">
+                <span className="text-sm sm:text-base">View Projects</span>
               </Link>
-              <Link 
-                to="/experience" 
-                className="btn btn-primary"
-              >
-                Experience
-              </Link>
-              <Link 
-                to="/projects" 
-                className="btn btn-primary"
-              >
-                Projects
-              </Link>
-              <Link 
-                to="/skills" 
-                className="btn btn-primary"
-              >
-                My Skills
-              </Link>
-              <Link 
-                to="/achievements" 
-                className="btn btn-primary"
-              >
-                Achievements
+              <Link to="/experience" className="btn btn-secondary w-full sm:w-auto text-center">
+                <span className="text-sm sm:text-base">My Experience</span>
               </Link>
             </motion.div>
           </motion.div>
         </div>
-        
       </div>
       
 
