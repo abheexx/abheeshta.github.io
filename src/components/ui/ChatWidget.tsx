@@ -90,6 +90,10 @@ const ChatWidget: React.FC = () => {
       return knowledgeBase.interests;
     }
     
+    if (message.includes('achievement') || message.includes('award') || message.includes('impact') || message.includes('success')) {
+      return "🏆 Abheeshta has achieved significant milestones both academically and professionally:\n\n🎯 **Competitions & Recognition:**\n• Winner of AI Showcase 2024 (1st among 50+ teams)\n• Gold Medal in Axis Bank Annual Youth Talent Contest\n• Top Performer in 48-Hour AI Hackathon\n\n🌐 **Portfolio Website Impact:**\n• 10K+ total impressions\n• 2.5K+ link clicks\n• 5K+ unique visitors\n• 500+ social shares\n• Reached 25+ countries\n• 150% monthly growth rate\n\n💼 **Professional Recognition:**\n• Member of Rewriting the Code (RTC) global community\n• Campus Ambassador for Career Services\n• Speaker at AI & Innovation Panel\n• Selected for NASSCOM FutureSkills AI Internship\n\nHer portfolio demonstrates strong professional visibility and global reach in the tech community!";
+    }
+    
     if (message.includes('contact') || message.includes('reach') || message.includes('email')) {
       return knowledgeBase.contact;
     }
@@ -133,6 +137,9 @@ const ChatWidget: React.FC = () => {
         break;
       case 'standout':
         message = "🧠 What makes her stand out?";
+        break;
+      case 'achievements':
+        message = "🏆 Show me achievements";
         break;
     }
     handleSendMessage(message);
@@ -233,6 +240,13 @@ const ChatWidget: React.FC = () => {
                   style={{color: '#825432'}}
                 >
                   🧠 What makes her stand out?
+                </button>
+                <button
+                  onClick={() => handleQuickReply('achievements')}
+                  className="flex items-center gap-1 px-3 py-2 bg-white border-2 border-gray-800 text-xs font-medium hover:bg-gray-200 transition-colors"
+                  style={{color: '#825432'}}
+                >
+                  🏆 Show me achievements
                 </button>
               </div>
             </div>

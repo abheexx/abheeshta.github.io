@@ -4,6 +4,10 @@ import './Achievements.css'; // We'll add custom CSS for the flip effect
 
 const achievements = [
   {
+    title: 'Portfolio Website Impact – High Engagement & Reach',
+    description: 'Achieved significant website performance with high impressions and link clicks, demonstrating strong online presence and professional visibility in the tech community.'
+  },
+  {
     title: 'Member – Rewriting the Code (RTC), 2025',
     description: 'Chosen to be part of a global tech community of women in computing, focused on leadership, mentorship, and career advancement in software engineering.'
   },
