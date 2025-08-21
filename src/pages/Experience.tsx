@@ -22,7 +22,7 @@ const Experience: React.FC = () => {
       title: "AI Engineer Intern",
       company: "Incepta Partners, Inc.",
       location: "Remote / United States",
-      period: "July 2025 - Present",
+      period: "July 2025 - August 2025",
       description: "Developing AI-powered automation tools and internal assistants for the insurance industry, focusing on GenAI pipelines and RAG-based applications.",
       technologies: ["Python", "LangChain", "OpenAI API", "Pinecone", "FastAPI", "Vercel", "Git", "TypeScript"],
       achievements: [
@@ -93,7 +93,7 @@ const Experience: React.FC = () => {
       title: "Technical Writer",
       company: "Andhra Pradesh Legislature",
       location: "Amaravati, India",
-      period: "Jun 2021 - Aug 2021",
+      period: "May 2021 - Aug 2021",
       description: "Worked with the IT and research division to document technical workflows and assist with digitization initiatives.",
       technologies: ["MS Word", "Excel", "Git", "Markdown", "Document Management Systems"],
       achievements: [
