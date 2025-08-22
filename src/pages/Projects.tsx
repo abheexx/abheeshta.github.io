@@ -331,7 +331,7 @@ const Projects: React.FC = () => {
 
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -522,7 +522,7 @@ const Projects: React.FC = () => {
 
                   {/* Case Studies Grid */}
                   <div className="p-6 overflow-y-auto max-h-[70vh]">
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-2 gap-6">
                       {caseStudies.map((study) => (
                         <motion.div
                           key={study.id}
@@ -552,7 +552,7 @@ const Projects: React.FC = () => {
                           </div>
 
                           {/* Problem & Solution */}
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                          <div className="grid grid-cols-2 gap-4 mb-4">
                             <div>
                               <h4 className="font-bold mb-2" style={{color: '#54C754'}}>❌ Problem</h4>
                               <p className="text-sm" style={{color: '#825432'}}>{study.problem}</p>

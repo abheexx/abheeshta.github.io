@@ -129,23 +129,23 @@ const Experience: React.FC = () => {
           animate={inView ? "visible" : "hidden"}
         >
           {/* Timeline line */}
-          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-primary-500 via-secondary-500 to-accent-500" />
+          <div className="absolute left-0 transform top-0 h-full w-0.5 bg-gradient-to-b from-primary-500 via-secondary-500 to-accent-500" />
           
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              className={`mb-12 md:mb-0 relative md:flex ${
-                index % 2 === 0 ? 'md:text-right' : 'md:text-left md:flex-row-reverse'
+              className={`mb-12 relative flex ${
+                index % 2 === 0 ? 'text-right' : 'text-left flex-row-reverse'
               }`}
               variants={itemVariants}
             >
-              <div className="hidden md:block w-1/2" />
+              <div className="hidden block w-1/2" />
               
 
               
-              <div className={`pl-10 md:pl-0 ${
-                index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'
-              } md:w-1/2`}>
+              <div className={`pl-10 ${
+                index % 2 === 0 ? 'pr-16' : 'pl-16'
+              } w-1/2`}>
                 <motion.div
                   className="card p-6 transition-all duration-300 bg-white dark:bg-dark-200"
                   style={{ borderLeftColor: exp.color }}

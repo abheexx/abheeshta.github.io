@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
         <motion.img
           src="/abhee.png"
           alt="Christmas Tree"
-          className="max-w-xs md:max-w-sm lg:max-w-md"
+          className="max-w-md"
           initial={{ scale: 0.8 }}
           animate={showChristmasTree ? { scale: 1 } : { scale: 0.8 }}
           transition={{ 
@@ -88,24 +88,24 @@ const Hero: React.FC = () => {
       className="h-full flex items-center relative overflow-hidden"
     >
       
-      <div className="container mx-auto relative z-20 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-center text-center min-h-screen py-8 sm:py-12 lg:py-16">
+      <div className="container mx-auto relative z-20 px-8">
+        <div className="flex flex-col items-center justify-center text-center min-h-screen py-16">
           <motion.div 
-            className="w-full max-w-2xl px-4 sm:px-6"
+            className="w-full max-w-2xl px-6"
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
             ref={ref}
           >
-            <motion.div variants={itemVariants} className="inline-block mb-4 px-3 py-2 sm:px-4 sm:py-2 bg-white border-2 border-gray-800 shadow-lg">
-              <span className="text-xs sm:text-sm font-bold" style={{color: '#54C754'}}>
+            <motion.div variants={itemVariants} className="inline-block mb-4 px-4 py-2 bg-white border-2 border-gray-800 shadow-lg">
+              <span className="text-sm font-bold" style={{color: '#54C754'}}>
                 🚀 AI Engineer & Data Scientist
               </span>
             </motion.div>
             
             <motion.h1 
               variants={itemVariants}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+              className="text-6xl font-bold mb-6 leading-tight"
               style={{
                 color: '#54C754',
                 textShadow: `
@@ -125,7 +125,7 @@ const Hero: React.FC = () => {
             
             <motion.p 
               variants={itemVariants}
-              className="text-lg sm:text-xl md:text-2xl mb-8 leading-relaxed px-2 sm:px-4"
+              className="text-2xl mb-8 leading-relaxed px-4"
               style={{color: '#825432'}}
             >
               Building intelligent systems that think, learn, and scale
@@ -134,7 +134,7 @@ const Hero: React.FC = () => {
             <motion.div variants={itemVariants} className="mb-8">
               <TypingEffect 
                 text="Passionate about AI, Machine Learning, and creating solutions that make a difference."
-                className="text-base sm:text-lg md:text-xl"
+                className="text-xl"
                 speed={50}
                 style={{color: '#825432'}}
               />
@@ -142,13 +142,13 @@ const Hero: React.FC = () => {
             
             <motion.div 
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              className="flex gap-4 justify-center items-center"
             >
-              <Link to="/projects" className="btn btn-primary w-full sm:w-auto text-center">
-                <span className="text-sm sm:text-base">View Projects</span>
+              <Link to="/projects" className="btn btn-primary text-center">
+                <span className="text-base">View Projects</span>
               </Link>
-              <Link to="/experience" className="btn btn-secondary w-full sm:w-auto text-center">
-                <span className="text-sm sm:text-base">My Experience</span>
+              <Link to="/experience" className="btn btn-secondary text-center">
+                <span className="text-base">My Experience</span>
               </Link>
             </motion.div>
           </motion.div>

@@ -157,7 +157,7 @@ const Skills: React.FC = () => {
           subtitle="Core competencies in software development, AI engineering, and system design."
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <div className="grid grid-cols-4 gap-6 mt-12">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}

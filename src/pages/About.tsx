@@ -73,7 +73,7 @@ const About: React.FC = () => {
           </motion.div>
 
           {/* Main Content */}
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-2 gap-8 items-center">
             {/* Image Section */}
             <motion.div variants={itemVariants} className="flex justify-center">
               <div className="relative">

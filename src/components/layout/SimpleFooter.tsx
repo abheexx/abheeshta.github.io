@@ -9,8 +9,8 @@ const SimpleFooter: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.5 }}
     >
-      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between">
-        <div className="flex items-center gap-4 mb-2 sm:mb-0">
+      <div className="container mx-auto flex flex-row items-center justify-between">
+        <div className="flex items-center gap-4 mb-0">
           <span className="text-sm" style={{color: '#825432'}}>
             © 2025 Abheeshta Vemuri. Built with ⛏️ and ❤️
           </span>

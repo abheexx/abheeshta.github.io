@@ -18,9 +18,9 @@ const About: React.FC = () => {
           subtitle="I'm passionate about leveraging AI and data science to create intelligent systems that make a positive impact on people's lives."
         />
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-2 gap-12 items-center">
           {/* Image on the left */}
-          <div className="order-1 lg:order-1 flex justify-center">
+          <div className="order-1 flex justify-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -82,7 +82,7 @@ const About: React.FC = () => {
           </div>
           
           {/* Text content on the right */}
-          <div className="order-2 lg:order-2">
+          <div className="order-2">
             <motion.div
               ref={ref}
               initial={{ opacity: 0, y: 30 }}
@@ -106,7 +106,7 @@ const About: React.FC = () => {
               Let's build the future,one smart system at a time.
                 </p>
               
-              <div className="pt-4 flex flex-col sm:flex-row gap-4">
+              <div className="pt-4 flex flex-row gap-4">
                 <a href="#projects" className="btn btn-primary">
                   <Award className="w-5 h-5 mr-2" />
                   View Projects

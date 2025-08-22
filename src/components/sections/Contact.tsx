@@ -44,11 +44,11 @@ const Education: React.FC = () => {
       <div className="container mx-auto px-4">
         <SectionHeading title="Education" />
         <div className="relative max-w-2xl mx-auto mt-8">
-          <div className="space-y-8 md:space-y-12 relative z-10">
+          <div className="space-y-12 relative z-10">
             {education.map((edu, i) => (
               <motion.div
                 key={edu.institution}
-                className="relative flex items-center md:items-stretch gap-2 md:gap-4"
+                className="relative flex items-stretch gap-4"
                 custom={i}
                 initial="hidden"
                 whileInView="visible"
@@ -61,11 +61,11 @@ const Education: React.FC = () => {
                   {/* No vertical line between dots */}
                 </div>
                 {/* Card, visually connected to the line */}
-                <div className="flex-1 card p-8 relative ml-0 md:ml-0 flex items-center justify-between"
+                <div className="flex-1 card p-8 relative ml-0 flex items-center justify-between"
                 >
                   <div>
                     <div className="flex items-center gap-2 mb-2">
-                      <h3 className="text-xl md:text-2xl font-bold" style={{color: '#54C754'}}>
+                      <h3 className="text-2xl font-bold" style={{color: '#54C754'}}>
                         {edu.institution}
                       </h3>
                     </div>
@@ -83,7 +83,7 @@ const Education: React.FC = () => {
                       <img
                         src="https://upload.wikimedia.org/wikipedia/en/thumb/1/14/Florida_Gators_gator_logo.svg/1200px-Florida_Gators_gator_logo.svg.png"
                         alt="Florida Gators Logo"
-                        className="relative z-10 w-12 h-12 object-contain ml-4 hidden md:block border-2 border-gray-800"
+                        className="relative z-10 w-12 h-12 object-contain ml-4 block border-2 border-gray-800"
                         style={{ 
                           clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%)'
                         }}

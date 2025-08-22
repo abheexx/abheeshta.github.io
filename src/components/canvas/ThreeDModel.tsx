@@ -13,7 +13,7 @@ const ThreeDModel: React.FC<ThreeDModelProps> = ({ className = '' }) => {
 
   return (
     <motion.div
-      className={`h-[300px] md:h-[500px] w-full ${className}`}
+      className={`h-[500px] w-full ${className}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.2 }}

@@ -34,7 +34,7 @@ const Achievements: React.FC = () => {
     <section id="achievements" className="py-24 pb-48">
       <div className="container mx-auto px-4">
         <SectionHeading title="Achievements" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center">
+        <div className="grid grid-cols-4 gap-8 justify-items-center">
           {achievements.map((ach, idx) => (
             <div
               key={idx}
