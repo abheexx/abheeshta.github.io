@@ -106,7 +106,7 @@ const Achievements: React.FC = () => {
         >
           {/* Header */}
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <h1 className="text-5xl font-bold" style={{
+            <h1 className="text-2xl font-bold" style={{
               color: '#54C754',
               textShadow: `
                 -2px -2px 0 #825432,

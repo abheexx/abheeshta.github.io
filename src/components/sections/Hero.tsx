@@ -44,8 +44,6 @@ const Hero: React.FC = () => {
     }
   };
 
-
-
   return (
     <>
       {/* Animated Christmas Tree */}
@@ -83,82 +81,86 @@ const Hero: React.FC = () => {
         />
       </motion.div>
 
-    <section 
-      id="home" 
-      className="h-full flex items-center relative overflow-hidden"
-    >
-      
-      <div className="container mx-auto relative z-20 px-8">
-        <div className="flex flex-col items-center justify-center text-center min-h-screen py-16">
-          <motion.div 
-            className="w-full max-w-2xl px-6"
-            variants={containerVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            ref={ref}
-          >
-            <motion.div variants={itemVariants} className="inline-block mb-4 px-4 py-2 bg-white border-2 border-gray-800 shadow-lg">
-              <span className="text-sm font-bold" style={{color: '#54C754'}}>
-                🚀 AI Engineer & Data Scientist
-              </span>
-            </motion.div>
-            
-            <motion.h1 
-              variants={itemVariants}
-              className="text-6xl font-bold mb-6 leading-tight"
-              style={{
-                color: '#54C754',
-                textShadow: `
-                  -2px -2px 0 #825432,
-                  2px -2px 0 #825432,
-                  -2px 2px 0 #825432,
-                  2px 2px 0 #825432,
-                  -1px -1px 0 #825432,
-                  1px -1px 0 #825432,
-                  -1px 1px 0 #825432,
-                  1px 1px 0 #825432
-                `
-              }}
-            >
-              Abheeshta Vemuri
-            </motion.h1>
-            
-            <motion.p 
-              variants={itemVariants}
-              className="text-2xl mb-8 leading-relaxed px-4"
-              style={{color: '#825432'}}
-            >
-              Building intelligent systems that think, learn, and scale
-            </motion.p>
-            
-            <motion.div variants={itemVariants} className="mb-8">
-              <TypingEffect 
-                text="Passionate about AI, Machine Learning, and creating solutions that make a difference."
-                className="text-xl"
-                speed={50}
-                style={{color: '#825432'}}
-              />
-            </motion.div>
-            
+      <section 
+        id="home" 
+        className="h-full flex items-center relative overflow-hidden"
+      >
+        <div className="container mx-auto relative z-20 px-8">
+          <div className="flex flex-col items-center justify-center text-center min-h-screen py-16">
             <motion.div 
-              variants={itemVariants}
-              className="flex gap-4 justify-center items-center"
+              className="w-full max-w-2xl px-6"
+              variants={containerVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              ref={ref}
             >
-              <Link to="/projects" className="btn btn-primary text-center">
-                <span className="text-base">View Projects</span>
-              </Link>
-              <Link to="/experience" className="btn btn-secondary text-center">
-                <span className="text-base">My Experience</span>
-              </Link>
+              {/* Greeting Speech Bubble */}
+              <motion.div variants={itemVariants} className="inline-block mb-6 px-4 py-2 bg-white border-2 border-gray-800 shadow-lg">
+                <span className="text-base font-bold" style={{color: '#825432'}}>
+                  ⛏️ Hi there! I'm 
+                </span>
+              </motion.div>
+              
+              {/* Name */}
+              <motion.h1 
+                variants={itemVariants}
+                className="text-5xl font-bold mb-6 leading-tight whitespace-nowrap text-center"
+                style={{
+                  color: '#54C754',
+                  marginLeft: '-50px',
+                  textShadow: `
+                    -2px -2px 0 #825432,
+                    2px -2px 0 #825432,
+                    -2px 2px 0 #825432,
+                    2px 2px 0 #825432
+                  `
+                }}
+              >
+                Abheeshta Vemuri
+              </motion.h1>
+              
+              {/* Tagline with Typing Effect */}
+              <motion.div variants={itemVariants} className="mb-8">
+                <TypingEffect 
+                  text="Blending tech and creativity to solve real-world user problems..!"
+                  className="text-base font-bold whitespace-nowrap overflow-hidden"
+                  speed={50}
+                  style={{color: '#825432'}}
+                />
+              </motion.div>
+              
+              {/* Navigation Buttons - Top Row */}
+              <motion.div variants={itemVariants} className="mb-4">
+                <div className="flex gap-4 justify-center items-center">
+                  <Link to="/about" className="btn btn-primary text-center">
+                    <span className="text-base">About Me</span>
+                  </Link>
+                  <Link to="/experience" className="btn btn-primary text-center">
+                    <span className="text-base">Experience</span>
+                  </Link>
+                  <Link to="/projects" className="btn btn-primary text-center">
+                    <span className="text-base">Projects</span>
+                  </Link>
+                  <Link to="/skills" className="btn btn-primary text-center">
+                    <span className="text-base">My Skills</span>
+                  </Link>
+                </div>
+              </motion.div>
+              
+              {/* Navigation Button - Bottom Row Centered */}
+              <motion.div variants={itemVariants} className="mb-8">
+                <div className="flex justify-center">
+                  <Link to="/achievements" className="btn btn-primary text-center">
+                    <span className="text-base">Achievements</span>
+                  </Link>
+                </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
-      </div>
+      </section>
       
-
-    </section>
-    
-    <Terminal isOpen={showTerminal} onClose={() => setShowTerminal(false)} />
+      <Terminal isOpen={showTerminal} onClose={() => setShowTerminal(false)} />
     </>
   );
 };
