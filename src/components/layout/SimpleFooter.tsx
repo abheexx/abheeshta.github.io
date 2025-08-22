@@ -16,9 +16,15 @@ const SimpleFooter: React.FC = () => {
           </span>
         </div>
         <div className="flex items-center gap-4">
-          <span className="text-sm font-semibold" style={{color: '#825432'}}>
+          <a 
+            href="https://www.linkedin.com/in/abheeshta-vemuri/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-sm font-semibold hover:underline cursor-pointer transition-all duration-200"
+            style={{color: '#825432'}}
+          >
             Let's Connect? ~
-          </span>
+          </a>
           <div className="relative group">
             <a 
               href="https://www.linkedin.com/in/abheeshta-vemuri/" 

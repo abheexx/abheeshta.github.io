@@ -272,16 +272,14 @@ const Experience: React.FC = () => {
                 Let's create something amazing together!
               </p>
               <div className="relative group">
-                <div className="btn btn-primary cursor-default">
+                <a 
+                  href="https://www.linkedin.com/in/abheeshta-vemuri/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn btn-primary cursor-pointer hover:scale-105 transition-transform duration-200"
+                >
                   Let's Connect
-                </div>
-                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-white border-2 border-gray-800 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50"
-                     style={{
-                       color: '#825432',
-                       boxShadow: '0 2px 0 #5D4037'
-                     }}>
-                  mail to: a.vemuri@ufl.edu
-                </div>
+                </a>
               </div>
             </div>
           </motion.div>
