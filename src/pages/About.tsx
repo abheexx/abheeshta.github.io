@@ -113,8 +113,7 @@ const About: React.FC = () => {
                 AI/ML, and product thinking, I thrive at the intersection of code, creativity, and impact.
                 </p>
                 <p className="mb-3 text-sm" style={{color: '#825432'}}>
-                I specialize in machine learning, deep learning, and data-driven systems. 
-                I've built scalable AI products and backend systems that not only function well, 
+                I've built scalable AI products that not only function well, 
                 but are thoughtfully designed to address real user needs.
                 </p>
                 <p className="text-sm" style={{color: '#825432'}}>

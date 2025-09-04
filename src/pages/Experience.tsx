@@ -19,31 +19,30 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       id: 1,
-      title: "AI Engineer Intern",
-      company: "Incepta Partners, Inc.",
-      location: "Remote / United States",
-      period: "July 2025 - August 2025",
-      description: "Developing AI-powered automation tools and internal assistants for the insurance industry, focusing on GenAI pipelines and RAG-based applications.",
-      technologies: ["Python", "LangChain", "OpenAI API", "Pinecone", "FastAPI", "Vercel", "Git", "TypeScript"],
-      achievements: [
-        "Built custom AI agents using OpenAI + LangChain to automate document analysis for insurance workflows",
-        "Integrated Pinecone vector DB with FastAPI for secure, real-time question-answering systems",
-        "Developed voice-enabled GenAI assistant using Vapi AI for internal teams, improving response efficiency by 30%",
-        "Contributed to modular agent architecture with reusable prompt chains and embedded memory"
-      ]
-    },
-    {
-      id: 2,
       title: "Graduate Research Assistant",
       company: "University of Florida",
       location: "Gainesville, FL",
       period: "Dec 2024 - Present",
-      description: "Building AI pipelines to extract and classify publisher metadata using PyTorch and supercomputing resources.",
+      description: "",
       technologies: ["PyTorch", "Docker", "Kubernetes", "GitLab", "Prometheus", "Grafana", "AWS S3"],
       achievements: [
-        "Fine-tuned PubDetectNet, improving metadata extraction accuracy by 20%",
-        "Built and containerized a CI/CD pipeline, deployed via Kubernetes",
-        "Engineered auto-scaling service for HiperGator HPC cluster, boosting MLOps efficiency by 15%"
+        "Implemented ML pipeline processing 15M+ publisher records, reducing processing time by 40%",
+        "Developed containerized microservices with Python for massive dataset processing",
+        "Built CI/CD pipeline with automated testing using GitLab"
+      ]
+    },
+    {
+      id: 2,
+      title: "AI Engineer Intern",
+      company: "Incepta Partners, Inc.",
+      location: "Remote / United States",
+      period: "July 2025 - August 2025",
+      description: "",
+      technologies: ["Python", "LangChain", "OpenAI API", "Pinecone", "FastAPI", "Vercel", "Git", "TypeScript"],
+      achievements: [
+        "Engineered FastAPI services handling 1000+ concurrent requests",
+        "Implemented vector database integration with Pinecone, optimizing performance by 60%",
+        "Developed real-time WebSocket APIs with sub-200ms response times"
       ]
     },
     {
@@ -52,12 +51,12 @@ const Experience: React.FC = () => {
       company: "Nasscom",
       location: "New Delhi, India",
       period: "Aug 2023 - Dec 2023",
-      description: "Developed real-time, scalable APIs and cloud-native automation tools for government skilling systems.",
+      description: "",
       technologies: ["Java", "Spring Boot", "Kafka", "Docker", "GCP", "Kubernetes", "Flask"],
       achievements: [
-        "Built Kafka-based API with file handling for skilling platforms",
-        "Deployed containerized services on GCP with CI/CD integration",
-        "Created intelligent automation tools in Flask, reducing deployment time by 40%"
+        "Developed REST APIs using Spring Boot, serving 50,000+ daily users",
+        "Implemented event-driven architecture with Apache Kafka, processing 1M+ messages per day",
+        "Built CI/CD pipelines with Docker and Kubernetes, reducing deployment time by 87%"
       ]
     },
     {
@@ -65,13 +64,13 @@ const Experience: React.FC = () => {
       title: "Software Engineer Intern",
       company: "Cognizant Technology Solutions",
       location: "Hyderabad, India",
-      period: "May 2023 - Aug 2023",
-      description: "Worked on backend healthcare data systems and CI/CD pipelines for secure and scalable deployments.",
+      period: "Jan 2023 - Aug 2023",
+      description: "",
       technologies: ["Python", "Django", "MySQL", "Spark", "Jenkins", "Vault", "Consul"],
       achievements: [
-        "Developed RESTful APIs for real-time healthcare data access",
-        "Built Spark pipelines integrated with Jenkins CI",
-        "Secured deployments using HashiCorp Vault and Consul"
+        "Developed Django REST APIs with JWT authentication for healthcare data",
+        "Engineered Apache Spark pipelines processing 100GB+ daily records",
+        "Implemented CI/CD workflows with Jenkins and secure deployment practices"
       ]
     },
     {
@@ -80,12 +79,11 @@ const Experience: React.FC = () => {
       company: "Bennett University",
       location: "Uttar Pradesh, India",
       period: "Aug 2022 - May 2023",
-      description: "Conducted coding sessions and mentored undergraduates on Python programming fundamentals and project development.",
+      description: "",
       technologies: ["Python", "Jupyter Notebook", "Git", "VS Code"],
       achievements: [
-        "Taught core Python concepts including OOP, file handling, and data structures",
-        "Designed hands-on assignments and mini-projects to reinforce learning",
-        "Mentored 50+ students, improving course engagement and project outcomes"
+        "Taught core Python concepts including OOP and data structures",
+        "Mentored 50+ students, improving course engagement"
       ]
     },
     {
@@ -94,12 +92,11 @@ const Experience: React.FC = () => {
       company: "Andhra Pradesh Legislature",
       location: "Amaravati, India",
       period: "May 2021 - Aug 2021",
-      description: "Worked with the IT and research division to document technical workflows and assist with digitization initiatives.",
+      description: "",
       technologies: ["MS Word", "Excel", "Git", "Markdown", "Document Management Systems"],
       achievements: [
         "Created user manuals and workflow documentation for internal software tools",
-        "Assisted in organizing legislative data for digitization and archiving",
-        "Collaborated with cross-functional teams to ensure accuracy and clarity in documentation"
+        "Organized legislative data for digitization and archiving"
       ]
     }
   ];

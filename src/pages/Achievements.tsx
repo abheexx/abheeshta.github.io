@@ -10,11 +10,11 @@ const Achievements: React.FC = () => {
   const achievements = [
     {
       id: 1,
-      title: "Winner – AI Showcase 2024",
+      title: "Winner – AI Showcase 2023",
       description: "Ranked <span style='font-weight: bold; color: #FF6B35;'>1st</span> among <span style='font-weight: bold; color: #FF6B35;'>50+ teams</span> for the '<span style='font-weight: bold; color: #FF6B35;'>Sign Language Recognition</span>' project using <span style='font-weight: bold; color: #FF6B35;'>CNN-LSTM</span>. Received prize money and special mention from the university's <span style='font-weight: bold; color: #FF6B35;'>AI lab panel</span>.",
       icon: "🏆",
       category: "competition",
-      date: "April 2024",
+      date: "April 2023",
       featured: true
     },
     {
