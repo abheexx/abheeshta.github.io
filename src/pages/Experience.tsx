@@ -47,7 +47,7 @@ const Experience: React.FC = () => {
     },
     {
       id: 3,
-      title: "Software Engineer Intern",
+      title: "Software Engineer",
       company: "Nasscom",
       location: "New Delhi, India",
       period: "Aug 2023 - Dec 2023",
@@ -61,10 +61,10 @@ const Experience: React.FC = () => {
     },
     {
       id: 4,
-      title: "Software Engineer Intern",
+      title: "Software Engineer",
       company: "Cognizant Technology Solutions",
       location: "Hyderabad, India",
-      period: "Jan 2023 - Aug 2023",
+      period: "Jul 2023 - Aug 2023",
       description: "",
       technologies: ["Python", "Django", "MySQL", "Spark", "Jenkins", "Vault", "Consul"],
       achievements: [
