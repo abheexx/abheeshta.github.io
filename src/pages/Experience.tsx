@@ -40,9 +40,10 @@ const Experience: React.FC = () => {
       description: "",
       technologies: ["Python", "LangChain", "OpenAI API", "Pinecone", "FastAPI", "Vercel", "Git", "TypeScript"],
       achievements: [
-        "Engineered FastAPI services handling 1000+ concurrent requests",
-        "Implemented vector database integration with Pinecone, optimizing performance by 60%",
-        "Developed real-time WebSocket APIs with sub-200ms response times"
+        "Built voice AI assistant with Vapi.ai + Twilio to automate insurance queries for 5+ agencies",
+        "Used OpenAI + LangChain to summarize claims and draft client replies, reducing handling time by 35%",
+        "Automated lead triage and CRM updates via n8n GenAI workflows"
+
       ]
     },
     {
@@ -54,9 +55,10 @@ const Experience: React.FC = () => {
       description: "",
       technologies: ["Java", "Spring Boot", "Kafka", "Docker", "GCP", "Kubernetes", "Flask"],
       achievements: [
-        "Developed REST APIs using Spring Boot, serving 50,000+ daily users",
-        "Implemented event-driven architecture with Apache Kafka, processing 1M+ messages per day",
-        "Built CI/CD pipelines with Docker and Kubernetes, reducing deployment time by 87%"
+        "Developed REST APIs in Python to track nationwide upskilling metrics across 20+ partner institutes",
+        "Optimized data pipelines and dashboards for reporting efficiency, cutting load time by 30%",
+        "Integrated role-based access and analytics features for government stakeholders"
+
       ]
     },
     {
@@ -68,9 +70,10 @@ const Experience: React.FC = () => {
       description: "",
       technologies: ["Python", "Django", "MySQL", "Spark", "Jenkins", "Vault", "Consul"],
       achievements: [
-        "Developed Django REST APIs with JWT authentication for healthcare data",
-        "Engineered Apache Spark pipelines processing 100GB+ daily records",
-        "Implemented CI/CD workflows with Jenkins and secure deployment practices"
+        "Engineered full-stack employee management system using React and Spring Boot, improving data retrieval by 40%",
+        "Developed and maintained REST APIs with role-based access and automated regression tests in Postman",
+        "Deployed microservices on AWS EC2 and Docker with CI/CD pipelines in GitHub Actions for faster rollbacks"
+
       ]
     },
     {
