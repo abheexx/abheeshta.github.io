@@ -62,7 +62,7 @@ const Hero: React.FC = () => {
         <motion.img
           src="/abhee.png"
           alt="Christmas Tree"
-          className="max-w-md"
+          className="max-w-[60vw] sm:max-w-md"
           initial={{ scale: 0.8 }}
           animate={showChristmasTree ? { scale: 1 } : { scale: 0.8 }}
           transition={{ 
@@ -85,18 +85,18 @@ const Hero: React.FC = () => {
         id="home" 
         className="h-full flex items-center relative overflow-hidden"
       >
-        <div className="container mx-auto relative z-20 px-8">
-          <div className="flex flex-col items-center justify-center text-center min-h-screen py-16">
+        <div className="container mx-auto relative z-20 px-4 sm:px-6 md:px-8">
+          <div className="flex flex-col items-center justify-center text-center min-h-screen py-8 sm:py-12 md:py-16">
             <motion.div 
-              className="w-full max-w-2xl px-6"
+              className="w-full max-w-2xl px-3 sm:px-6"
               variants={containerVariants}
               initial="hidden"
               animate={inView ? "visible" : "hidden"}
               ref={ref}
             >
               {/* Greeting Speech Bubble */}
-              <motion.div variants={itemVariants} className="inline-block mb-6 px-4 py-2 bg-white border-2 border-gray-800 shadow-lg">
-                <span className="text-base font-bold" style={{color: '#825432'}}>
+              <motion.div variants={itemVariants} className="inline-block mb-4 sm:mb-6 px-3 sm:px-4 py-2 bg-white border-2 border-gray-800 shadow-lg">
+                <span className="text-sm sm:text-base font-bold" style={{color: '#825432'}}>
                   ⛏️ Hi there! I'm 
                 </span>
               </motion.div>
@@ -104,10 +104,10 @@ const Hero: React.FC = () => {
               {/* Name */}
               <motion.h1 
                 variants={itemVariants}
-                className="text-5xl font-bold mb-6 leading-tight whitespace-nowrap text-center"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 leading-tight text-center"
                 style={{
                   color: '#54C754',
-                  marginLeft: '-50px',
+                  marginLeft: '0',
                   textShadow: `
                     -2px -2px 0 #825432,
                     2px -2px 0 #825432,
@@ -120,38 +120,38 @@ const Hero: React.FC = () => {
               </motion.h1>
               
               {/* Tagline with Typing Effect */}
-              <motion.div variants={itemVariants} className="mb-8">
+              <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
                 <TypingEffect 
-                  text="Blending tech and creativity to solve real-world user problems..!"
-                  className="text-base font-bold whitespace-nowrap overflow-hidden"
+                  text="Turning ideas into smart, usable tech...!"
+                  className="text-sm sm:text-base font-bold overflow-hidden px-2"
                   speed={50}
                   style={{color: '#825432'}}
                 />
               </motion.div>
               
               {/* Navigation Buttons - Top Row */}
-              <motion.div variants={itemVariants} className="mb-4">
-                <div className="flex gap-4 justify-center items-center">
-                  <Link to="/about" className="btn btn-primary text-center">
-                    <span className="text-base">About Me</span>
+              <motion.div variants={itemVariants} className="mb-3 sm:mb-4">
+                <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 justify-center items-center">
+                  <Link to="/about" className="btn btn-primary text-center text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-2 sm:py-3">
+                    <span>About Me</span>
                   </Link>
-                  <Link to="/experience" className="btn btn-primary text-center">
-                    <span className="text-base">Experience</span>
+                  <Link to="/experience" className="btn btn-primary text-center text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-2 sm:py-3">
+                    <span>Experience</span>
                   </Link>
-                  <Link to="/projects" className="btn btn-primary text-center">
-                    <span className="text-base">Projects</span>
+                  <Link to="/projects" className="btn btn-primary text-center text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-2 sm:py-3">
+                    <span>Projects</span>
                   </Link>
-                  <Link to="/skills" className="btn btn-primary text-center">
-                    <span className="text-base">My Skills</span>
+                  <Link to="/skills" className="btn btn-primary text-center text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-2 sm:py-3">
+                    <span>My Skills</span>
                   </Link>
                 </div>
               </motion.div>
               
               {/* Navigation Button - Bottom Row Centered */}
-              <motion.div variants={itemVariants} className="mb-8">
+              <motion.div variants={itemVariants} className="mb-6 sm:mb-8">
                 <div className="flex justify-center">
-                  <Link to="/achievements" className="btn btn-primary text-center">
-                    <span className="text-base">Achievements</span>
+                  <Link to="/achievements" className="btn btn-primary text-center text-xs sm:text-sm md:text-base px-3 sm:px-4 md:px-6 py-2 sm:py-3">
+                    <span>Achievements</span>
                   </Link>
                 </div>
               </motion.div>

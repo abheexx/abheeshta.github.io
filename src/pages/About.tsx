@@ -34,7 +34,7 @@ const About: React.FC = () => {
       {/* Back Button */}
       <motion.button
         onClick={() => navigate('/')}
-        className="fixed top-6 left-6 z-50 p-3 bg-white border-4 border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+        className="fixed top-3 left-3 sm:top-6 sm:left-6 z-50 p-2 sm:p-3 bg-white border-2 sm:border-4 border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-1 sm:gap-2 text-xs sm:text-base"
         style={{ boxShadow: '0 4px 0 #5D4037' }}
         whileHover={{ scale: 1.05, y: -2 }}
         whileTap={{ scale: 0.95 }}
@@ -42,11 +42,12 @@ const About: React.FC = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <ArrowLeft className="w-5 h-5" style={{color: '#825432'}} />
-        <span style={{color: '#825432'}}>Back to Home</span>
+        <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" style={{color: '#825432'}} />
+        <span className="hidden sm:inline" style={{color: '#825432'}}>Back to Home</span>
+        <span className="sm:hidden" style={{color: '#825432'}}>Back</span>
       </motion.button>
 
-      <div className="container mx-auto px-4 py-8 relative z-20 h-screen flex items-center">
+      <div className="container mx-auto px-4 py-4 sm:py-8 relative z-20 min-h-screen flex items-center">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -54,8 +55,8 @@ const About: React.FC = () => {
           className="max-w-6xl mx-auto w-full"
         >
           {/* Header */}
-          <motion.div variants={itemVariants} className="text-center mb-6">
-            <h1 className="text-4xl font-bold" style={{
+          <motion.div variants={itemVariants} className="text-center mb-4 sm:mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold" style={{
               color: '#54C754',
               textShadow: `
                 -2px -2px 0 #825432,
@@ -73,7 +74,7 @@ const About: React.FC = () => {
           </motion.div>
 
           {/* Main Content */}
-          <div className="grid grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
             {/* Image Section */}
             <motion.div variants={itemVariants} className="flex justify-center">
               <div className="relative">
@@ -85,7 +86,7 @@ const About: React.FC = () => {
                 <motion.img
                   src="/pic.jpg"
                   alt="Abheeshta Vemuri - AI Engineer"
-                  className="relative z-10 w-64 h-64 object-cover border-6 border-gray-800 shadow-lg"
+                  className="relative z-10 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 object-cover border-4 sm:border-6 border-gray-800 shadow-lg"
                   style={{ 
                     clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%)'
                   }}
@@ -102,21 +103,21 @@ const About: React.FC = () => {
             </motion.div>
 
             {/* Text Content */}
-            <motion.div variants={itemVariants} className="space-y-4">
-              <div className="card p-6">
-                <h2 className="text-xl font-bold mb-3" style={{color: '#54C754'}}>
+            <motion.div variants={itemVariants} className="space-y-3 sm:space-y-4">
+              <div className="card p-4 sm:p-6">
+                <h2 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3" style={{color: '#54C754'}}>
                   🧠 MS Student at University of Florida!
                 </h2>
-                <p className="mb-3 text-sm" style={{color: '#825432'}}>
+                <p className="mb-2 sm:mb-3 text-xs sm:text-sm" style={{color: '#825432'}}>
                 I'm passionate about solving complex, real-world problems through intelligent,
                 human-centered technology. With hands-on experience across software engineering, 
                 AI/ML, and product thinking, I thrive at the intersection of code, creativity, and impact.
                 </p>
-                <p className="mb-3 text-sm" style={{color: '#825432'}}>
+                <p className="mb-2 sm:mb-3 text-xs sm:text-sm" style={{color: '#825432'}}>
                 I've built scalable AI products that not only function well, 
                 but are thoughtfully designed to address real user needs.
                 </p>
-                <p className="text-sm" style={{color: '#825432'}}>
+                <p className="text-xs sm:text-sm" style={{color: '#825432'}}>
                 Whether I'm writing production-grade code, shaping product strategy, 
                 or optimizing model performance - I'm driven by one goal: to build systems that matter.
                 Outside of work, you'll find me exploring emerging technologies, contributing to open-source projects, 
@@ -127,21 +128,21 @@ const About: React.FC = () => {
               </div>
 
               {/* Quick Stats */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="card p-3 text-center">
-                  <div className="text-2xl font-bold mb-1" style={{color: '#54C754'}}>3+</div>
+              <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                <div className="card p-2 sm:p-3 text-center">
+                  <div className="text-xl sm:text-2xl font-bold mb-1" style={{color: '#54C754'}}>3+</div>
                   <div className="text-xs" style={{color: '#825432'}}>Years Experience</div>
                 </div>
-                <div className="card p-3 text-center">
-                  <div className="text-2xl font-bold mb-1" style={{color: '#54C754'}}>10+</div>
+                <div className="card p-2 sm:p-3 text-center">
+                  <div className="text-xl sm:text-2xl font-bold mb-1" style={{color: '#54C754'}}>10+</div>
                   <div className="text-xs" style={{color: '#825432'}}>Projects Completed</div>
                 </div>
-                <div className="card p-3 text-center">
-                  <div className="text-2xl font-bold mb-1" style={{color: '#54C754'}}>5+</div>
+                <div className="card p-2 sm:p-3 text-center">
+                  <div className="text-xl sm:text-2xl font-bold mb-1" style={{color: '#54C754'}}>5+</div>
                   <div className="text-xs" style={{color: '#825432'}}>Technologies Mastered</div>
                 </div>
-                <div className="card p-3 text-center">
-                  <div className="text-2xl font-bold mb-1" style={{color: '#54C754'}}>∞</div>
+                <div className="card p-2 sm:p-3 text-center">
+                  <div className="text-xl sm:text-2xl font-bold mb-1" style={{color: '#54C754'}}>∞</div>
                   <div className="text-xs" style={{color: '#825432'}}>Learning Mindset</div>
                 </div>
               </div>

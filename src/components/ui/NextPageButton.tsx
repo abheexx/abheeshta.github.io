@@ -31,7 +31,7 @@ const NextPageButton: React.FC<NextPageButtonProps> = ({ className = "" }) => {
 
   return (
     <motion.div
-      className={`fixed top-20 right-8 z-30 ${className}`}
+      className={`fixed top-12 sm:top-16 md:top-20 right-3 sm:right-6 md:right-8 z-30 ${className}`}
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 0.5 }}
@@ -40,17 +40,20 @@ const NextPageButton: React.FC<NextPageButtonProps> = ({ className = "" }) => {
     >
       <Link
         to={currentPage?.nextPath || '/'}
-        className="group flex items-center gap-3 px-6 py-3 bg-white border-4 border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300"
+        className="group flex items-center gap-2 sm:gap-3 px-3 sm:px-4 md:px-6 py-2 sm:py-3 bg-white border-2 sm:border-4 border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300"
         style={{ 
           boxShadow: '0 4px 0 #5D4037',
           color: '#825432'
         }}
       >
-        <div className="text-right">
+        <div className="text-right hidden sm:block">
           <div className="text-xs font-medium opacity-75">Next Page</div>
           <div className="text-sm font-bold">{currentPage?.nextName}</div>
         </div>
-        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        <div className="text-right sm:hidden">
+          <div className="text-xs font-bold">{currentPage?.nextName}</div>
+        </div>
+        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
       </Link>
     </motion.div>
   );

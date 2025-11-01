@@ -129,7 +129,7 @@ const Experience: React.FC = () => {
       {/* Back Button */}
       <motion.button
         onClick={() => navigate('/')}
-        className="fixed top-6 left-6 z-50 p-3 bg-white border-4 border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+        className="fixed top-3 left-3 sm:top-6 sm:left-6 z-50 p-2 sm:p-3 bg-white border-2 sm:border-4 border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-1 sm:gap-2 text-xs sm:text-base"
         style={{ boxShadow: '0 4px 0 #5D4037' }}
         whileHover={{ scale: 1.05, y: -2 }}
         whileTap={{ scale: 0.95 }}
@@ -137,11 +137,12 @@ const Experience: React.FC = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <ArrowLeft className="w-5 h-5" style={{color: '#825432'}} />
-        <span style={{color: '#825432'}}>Back to Home</span>
+        <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" style={{color: '#825432'}} />
+        <span className="hidden sm:inline" style={{color: '#825432'}}>Back to Home</span>
+        <span className="sm:hidden" style={{color: '#825432'}}>Back</span>
       </motion.button>
 
-      <div className="container mx-auto px-4 py-20 relative z-20">
+      <div className="container mx-auto px-4 py-8 sm:py-16 md:py-20 relative z-20">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -149,8 +150,8 @@ const Experience: React.FC = () => {
           className="max-w-4xl mx-auto"
         >
           {/* Header */}
-          <motion.div variants={itemVariants} className="text-center mb-12">
-            <h1 className="text-5xl font-bold" style={{
+          <motion.div variants={itemVariants} className="text-center mb-8 sm:mb-12">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold" style={{
               color: '#54C754',
               textShadow: `
                 -2px -2px 0 #825432,
@@ -170,10 +171,10 @@ const Experience: React.FC = () => {
           {/* Timeline with Zigzag Boxes */}
           <div className="relative">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-800 transform -translate-x-1/2"></div>
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gray-800 transform -translate-x-1/2"></div>
             
             {/* Experience Items */}
-            <div className="space-y-12">
+            <div className="space-y-6 sm:space-y-8 md:space-y-12">
               {experiences.map((exp, index) => (
                 <motion.div
                   key={exp.id}
@@ -181,16 +182,16 @@ const Experience: React.FC = () => {
                   className="relative flex justify-center"
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-1/2 w-4 h-4 bg-gray-600 border-2 border-gray-800 rounded-full transform -translate-x-1/2 mt-2"></div>
+                  <div className="hidden md:block absolute left-1/2 w-4 h-4 bg-gray-600 border-2 border-gray-800 rounded-full transform -translate-x-1/2 mt-2"></div>
                   
                   {/* Dynamic Content Card */}
-                  <div className={`card p-4 w-80 flex flex-col relative z-10 transition-all duration-300 overflow-hidden ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'} ${expandedItems.includes(exp.id) ? 'h-auto min-h-80' : 'h-48'}`}>
+                  <div className={`card p-3 sm:p-4 w-full max-w-sm sm:max-w-md md:w-80 flex flex-col relative z-10 transition-all duration-300 overflow-hidden ${index % 2 === 0 ? 'md:mr-auto' : 'md:ml-auto'} ${expandedItems.includes(exp.id) ? 'h-auto min-h-48 md:min-h-80' : 'h-auto md:h-48'}`}>
                     <div className="flex flex-col h-full">
-                      <div className="mb-3">
-                        <h3 className="text-lg font-bold mb-1" style={{color: '#54C754'}}>
+                      <div className="mb-2 sm:mb-3">
+                        <h3 className="text-base sm:text-lg font-bold mb-1" style={{color: '#54C754'}}>
                           {exp.title}
                         </h3>
-                        <p className="text-sm font-semibold mb-1" style={{color: '#825432'}}>
+                        <p className="text-xs sm:text-sm font-semibold mb-1" style={{color: '#825432'}}>
                           {exp.company}
                         </p>
                         <div className="flex items-center gap-2 text-xs" style={{color: '#825432'}}>
@@ -262,12 +263,12 @@ const Experience: React.FC = () => {
           </div>
 
           {/* Call to Action */}
-          <motion.div variants={itemVariants} className="text-center mt-16">
-            <div className="card p-8">
-              <h2 className="text-3xl font-bold mb-4" style={{color: '#54C754'}}>
+          <motion.div variants={itemVariants} className="text-center mt-8 sm:mt-12 md:mt-16">
+            <div className="card p-4 sm:p-6 md:p-8">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4" style={{color: '#54C754'}}>
                 🚀 Ready for the next adventure?
               </h2>
-              <p className="mb-6" style={{color: '#825432'}}>
+              <p className="mb-4 sm:mb-6 text-sm sm:text-base" style={{color: '#825432'}}>
                 I'm always looking for new challenges and opportunities to grow. 
                 Let's create something amazing together!
               </p>

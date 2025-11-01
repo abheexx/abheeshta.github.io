@@ -280,7 +280,7 @@ const Projects: React.FC = () => {
       {/* Back Button */}
       <motion.button
         onClick={() => navigate('/')}
-        className="fixed top-6 left-6 z-50 p-3 bg-white border-4 border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+        className="fixed top-3 left-3 sm:top-6 sm:left-6 z-50 p-2 sm:p-3 bg-white border-2 sm:border-4 border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-1 sm:gap-2 text-xs sm:text-base"
         style={{ boxShadow: '0 4px 0 #5D4037' }}
         whileHover={{ scale: 1.05, y: -2 }}
         whileTap={{ scale: 0.95 }}
@@ -288,11 +288,12 @@ const Projects: React.FC = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <ArrowLeft className="w-5 h-5" style={{color: '#825432'}} />
-        <span style={{color: '#825432'}}>Back to Home</span>
+        <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" style={{color: '#825432'}} />
+        <span className="hidden sm:inline" style={{color: '#825432'}}>Back to Home</span>
+        <span className="sm:hidden" style={{color: '#825432'}}>Back</span>
       </motion.button>
 
-      <div className="container mx-auto px-4 py-20 relative z-20">
+      <div className="container mx-auto px-4 py-8 sm:py-16 md:py-20 relative z-20">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -300,8 +301,8 @@ const Projects: React.FC = () => {
           className="max-w-6xl mx-auto"
         >
           {/* Header */}
-          <motion.div variants={itemVariants} className="text-center mb-8">
-            <h1 className="text-5xl font-bold mb-6" style={{
+          <motion.div variants={itemVariants} className="text-center mb-6 sm:mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6" style={{
               color: '#54C754',
               textShadow: `
                 -2px -2px 0 #825432,
@@ -331,7 +332,7 @@ const Projects: React.FC = () => {
 
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {filteredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
@@ -370,11 +371,11 @@ const Projects: React.FC = () => {
                   )}
 
                 {/* Project Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3" style={{color: '#54C754'}}>
+                <div className="p-4 sm:p-6">
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3" style={{color: '#54C754'}}>
                     {project.title}
                   </h3>
-                  <p className="mb-4 text-sm" style={{color: '#825432'}}>
+                  <p className="mb-3 sm:mb-4 text-xs sm:text-sm" style={{color: '#825432'}}>
                     {project.description}
                   </p>
                   
@@ -397,16 +398,17 @@ const Projects: React.FC = () => {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 btn btn-outline text-center"
+                      className="flex-1 btn btn-outline text-center text-xs sm:text-sm"
                     >
-                      <Github size={16} className="mr-2" />
-                      GitHub
+                      <Github size={14} className="mr-1 sm:mr-2 sm:w-4 sm:h-4 w-3 h-3" />
+                      <span className="hidden sm:inline">GitHub</span>
+                      <span className="sm:hidden">Git</span>
                     </a>
                     <button
                       onClick={(e) => handleDemoClick(e, project)}
-                      className="flex-1 btn btn-primary"
+                      className="flex-1 btn btn-primary text-xs sm:text-sm"
                     >
-                      <ExternalLink size={16} className="mr-2" />
+                      <ExternalLink size={14} className="mr-1 sm:mr-2 sm:w-4 sm:h-4 w-3 h-3" />
                       Demo
                     </button>
                   </div>
@@ -434,22 +436,22 @@ const Projects: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+                className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-2 sm:p-4"
                 onClick={() => setShowReadmePopup(false)}
               >
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.8, opacity: 0 }}
-                  className="bg-white border-4 border-gray-800 shadow-2xl max-w-4xl w-full max-h-[80vh] overflow-hidden"
+                  className="bg-white border-2 sm:border-4 border-gray-800 shadow-2xl max-w-[95vw] sm:max-w-4xl w-full max-h-[90vh] sm:max-h-[80vh] overflow-hidden"
                   style={{ boxShadow: '0 8px 0 #5D4037' }}
                   onClick={(e) => e.stopPropagation()}
                 >
                   {/* Terminal Header */}
-                  <div className="bg-gray-800 px-4 py-3 flex items-center justify-between border-b-4 border-gray-600">
-                    <div className="flex items-center gap-3">
-                      <Terminal className="w-5 h-5 text-green-400" />
-                      <span className="text-white font-mono text-sm">
+                  <div className="bg-gray-800 px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between border-b-2 sm:border-b-4 border-gray-600">
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <Terminal className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
+                      <span className="text-white font-mono text-xs sm:text-sm truncate">
                         README.md - {currentProject}
                       </span>
                     </div>
@@ -457,12 +459,12 @@ const Projects: React.FC = () => {
                       onClick={() => setShowReadmePopup(false)}
                       className="text-white hover:text-red-400 transition-colors"
                     >
-                      <X className="w-5 h-5" />
+                      <X className="w-4 h-4 sm:w-5 sm:h-5" />
                     </button>
                   </div>
 
                   {/* Terminal Content */}
-                  <div className="p-6 bg-black text-green-400 font-mono text-sm overflow-y-auto max-h-[60vh]">
+                  <div className="p-3 sm:p-6 bg-black text-green-400 font-mono text-xs sm:text-sm overflow-y-auto max-h-[60vh]">
                     {isLoadingReadme ? (
                       <div className="flex items-center gap-2">
                         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-green-400"></div>
@@ -476,9 +478,10 @@ const Projects: React.FC = () => {
                   </div>
 
                   {/* Terminal Footer */}
-                  <div className="bg-gray-800 px-4 py-2 border-t-4 border-gray-600">
+                  <div className="bg-gray-800 px-3 sm:px-4 py-2 border-t-2 sm:border-t-4 border-gray-600">
                     <div className="flex items-center gap-2 text-white text-xs">
-                      <span>Press ESC or click X to close</span>
+                      <span className="hidden sm:inline">Press ESC or click X to close</span>
+                      <span className="sm:hidden">Click X to close</span>
                     </div>
                   </div>
                 </motion.div>
@@ -493,40 +496,40 @@ const Projects: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+                className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-2 sm:p-4"
                 onClick={() => setShowCaseStudy(false)}
               >
                 <motion.div
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.8, opacity: 0 }}
-                  className="bg-white border-4 border-gray-800 shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden"
+                  className="bg-white border-2 sm:border-4 border-gray-800 shadow-2xl max-w-[95vw] sm:max-w-6xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-hidden"
                   style={{ boxShadow: '0 8px 0 #5D4037' }}
                   onClick={(e) => e.stopPropagation()}
                 >
                   {/* Modal Header */}
-                  <div className="bg-gradient-to-r from-[#57C84D] to-[#387F2D] px-6 py-4 border-b-4 border-gray-800">
+                  <div className="bg-gradient-to-r from-[#57C84D] to-[#387F2D] px-4 sm:px-6 py-3 sm:py-4 border-b-2 sm:border-b-4 border-gray-800">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <FileText className="w-6 h-6 text-white" />
-                        <h2 className="text-2xl font-bold text-white">📊 Product Case Studies</h2>
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                        <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white">📊 Product Case Studies</h2>
                       </div>
                       <button
                         onClick={() => setShowCaseStudy(false)}
                         className="text-white hover:text-red-200 transition-colors"
                       >
-                        <X className="w-6 h-6" />
+                        <X className="w-5 h-5 sm:w-6 sm:h-6" />
                       </button>
                     </div>
                   </div>
 
                   {/* Case Studies Grid */}
-                  <div className="p-6 overflow-y-auto max-h-[70vh]">
-                    <div className="grid grid-cols-2 gap-6">
+                  <div className="p-4 sm:p-6 overflow-y-auto max-h-[70vh]">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                       {caseStudies.map((study) => (
                         <motion.div
                           key={study.id}
-                          className="bg-white border-4 border-gray-800 p-6 hover:shadow-lg transition-all duration-300"
+                          className="bg-white border-2 sm:border-4 border-gray-800 p-4 sm:p-6 hover:shadow-lg transition-all duration-300"
                           style={{ boxShadow: '0 4px 0 #5D4037' }}
                           whileHover={{ y: -4, boxShadow: '0 8px 0 #5D4037' }}
                         >

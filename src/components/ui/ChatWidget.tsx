@@ -160,7 +160,7 @@ const ChatWidget: React.FC = () => {
           setMessages([initialMessage]);
           setIsOpen(true);
         }}
-        className="fixed bottom-20 right-6 z-50 w-16 h-16 bg-white border-4 border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center overflow-hidden"
+        className="fixed bottom-16 sm:bottom-20 right-3 sm:right-6 z-50 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white border-2 sm:border-4 border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center overflow-hidden"
         style={{ boxShadow: '0 4px 0 #5D4037' }}
         whileHover={{ scale: 1.1, y: -2 }}
         whileTap={{ scale: 0.95, y: 0 }}
@@ -177,9 +177,10 @@ const ChatWidget: React.FC = () => {
       </motion.button>
       
       {/* Label on top with squared box */}
-      <div className="fixed bottom-36 right-6 z-50 flex flex-col items-center select-none pointer-events-none">
-        <div className="px-3 py-1 bg-white border-2 border-gray-800 text-xs font-semibold shadow-md animate-pulse pointer-events-auto" style={{color: '#825432', boxShadow: '0 2px 0 #5D4037'}}>
-          <span className="inline">🤖 Chat with my AI!</span>
+      <div className="fixed bottom-28 sm:bottom-36 right-3 sm:right-6 z-50 flex flex-col items-center select-none pointer-events-none">
+        <div className="px-2 sm:px-3 py-1 bg-white border-2 border-gray-800 text-xs font-semibold shadow-md animate-pulse pointer-events-auto" style={{color: '#825432', boxShadow: '0 2px 0 #5D4037'}}>
+          <span className="hidden sm:inline">🤖 Chat with my AI!</span>
+          <span className="sm:hidden">🤖 AI</span>
         </div>
       </div>
 
@@ -191,14 +192,14 @@ const ChatWidget: React.FC = () => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-24 right-6 z-50 w-96 h-[32rem] bg-white border-4 border-gray-800 shadow-2xl overflow-hidden flex flex-col"
+            className="fixed bottom-20 sm:bottom-24 right-3 sm:right-6 z-50 w-[calc(100vw-1.5rem)] sm:w-96 max-w-[calc(100vw-1.5rem)] sm:max-w-96 h-[calc(100vh-6rem)] sm:h-[32rem] bg-white border-2 sm:border-4 border-gray-800 shadow-2xl overflow-hidden flex flex-col"
             style={{ boxShadow: '0 8px 0 #5D4037' }}
           >
             {/* Chat Header */}
-            <div className="bg-white border-b-4 border-gray-800 p-4" style={{color: '#54C754'}}>
+            <div className="bg-white border-b-2 sm:border-b-4 border-gray-800 p-3 sm:p-4" style={{color: '#54C754'}}>
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-gray-200 border-2 border-gray-600 flex items-center justify-center overflow-hidden">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-200 border-2 border-gray-600 flex items-center justify-center overflow-hidden flex-shrink-0">
                     <img 
                       src="/robo.jpeg" 
                       alt="AI Assistant" 
@@ -206,9 +207,9 @@ const ChatWidget: React.FC = () => {
                       style={{ transform: 'scale(1.3)' }}
                     />
                   </div>
-                  <div>
-                    <h3 className="text-lg font-bold" style={{color: '#54C754'}}>AI Assistant</h3>
-                    <p className="text-xs" style={{color: '#825432'}}>Ask me anything about Abheeshta's world!</p>
+                  <div className="min-w-0">
+                    <h3 className="text-base sm:text-lg font-bold truncate" style={{color: '#54C754'}}>AI Assistant</h3>
+                    <p className="text-xs hidden sm:block" style={{color: '#825432'}}>Ask me anything about Abheeshta's world!</p>
                   </div>
                 </div>
                 <button
@@ -216,37 +217,40 @@ const ChatWidget: React.FC = () => {
                     setIsOpen(false);
                     setMessages([initialMessage]);
                   }}
-                  className="p-2 border-2 border-gray-800 bg-white hover:bg-gray-200 transition-colors"
+                  className="p-1 sm:p-2 border-2 border-gray-800 bg-white hover:bg-gray-200 transition-colors flex-shrink-0"
                   style={{color: '#825432'}}
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
               </div>
             </div>
 
             {/* Quick Reply Buttons */}
-            <div className="p-3 border-b-4 border-gray-800 bg-gray-100">
-              <div className="flex items-center gap-2">
+            <div className="p-2 sm:p-3 border-b-2 sm:border-b-4 border-gray-800 bg-gray-100">
+              <div className="flex items-center gap-1 sm:gap-2 overflow-x-auto">
                 <button
                   onClick={() => handleQuickReply('explore')}
-                  className="flex items-center gap-1 px-3 py-2 bg-white border-2 border-gray-800 text-xs font-medium hover:bg-gray-200 transition-colors"
+                  className="flex items-center gap-1 px-2 sm:px-3 py-1 sm:py-2 bg-white border-2 border-gray-800 text-xs font-medium hover:bg-gray-200 transition-colors flex-shrink-0"
                   style={{color: '#825432'}}
                 >
-                  <span className="inline">🗺️ Help me explore the site</span>
+                  <span className="hidden sm:inline">🗺️ Help me explore the site</span>
+                  <span className="sm:hidden">🗺️ Explore</span>
                 </button>
                 <button
                   onClick={() => handleQuickReply('standout')}
-                  className="flex items-center gap-1 px-3 py-2 bg-white border-2 border-gray-800 text-xs font-medium hover:bg-gray-200 transition-colors"
+                  className="flex items-center gap-1 px-2 sm:px-3 py-1 sm:py-2 bg-white border-2 border-gray-800 text-xs font-medium hover:bg-gray-200 transition-colors flex-shrink-0"
                   style={{color: '#825432'}}
                 >
-                  <span className="inline">🧠 What makes her stand out?</span>
+                  <span className="hidden sm:inline">🧠 What makes her stand out?</span>
+                  <span className="sm:hidden">🧠 Standout</span>
                 </button>
                 <button
                   onClick={() => handleQuickReply('achievements')}
-                  className="flex items-center gap-1 px-3 py-2 bg-white border-2 border-gray-800 text-xs font-medium hover:bg-gray-200 transition-colors"
+                  className="flex items-center gap-1 px-2 sm:px-3 py-1 sm:py-2 bg-white border-2 border-gray-800 text-xs font-medium hover:bg-gray-200 transition-colors flex-shrink-0"
                   style={{color: '#825432'}}
                 >
-                  <span className="inline">🏆 Show me achievements</span>
+                  <span className="hidden sm:inline">🏆 Show me achievements</span>
+                  <span className="sm:hidden">🏆 Achievements</span>
                 </button>
               </div>
             </div>
@@ -307,7 +311,7 @@ const ChatWidget: React.FC = () => {
             </div>
 
             {/* Chat Input */}
-            <div className="p-3 border-t-4 border-gray-800 bg-gray-100">
+            <div className="p-2 sm:p-3 border-t-2 sm:border-t-4 border-gray-800 bg-gray-100">
               <div className="flex gap-2">
                 <input
                   type="text"
@@ -315,14 +319,14 @@ const ChatWidget: React.FC = () => {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Type your message..."
-                  className="flex-1 px-3 py-2 border-2 border-gray-800 bg-white text-sm focus:outline-none focus:border-gray-600 transition-colors"
+                  className="flex-1 px-2 sm:px-3 py-1 sm:py-2 border-2 border-gray-800 bg-white text-xs sm:text-sm focus:outline-none focus:border-gray-600 transition-colors"
                   style={{color: '#825432'}}
                   disabled={isTyping}
                 />
                 <button
                   onClick={() => handleSendMessage()}
                   disabled={!inputValue.trim() || isTyping}
-                  className="px-3 py-2 bg-white border-2 border-gray-800 hover:bg-gray-200 disabled:bg-gray-300 text-sm transition-colors disabled:cursor-not-allowed"
+                  className="px-2 sm:px-3 py-1 sm:py-2 bg-white border-2 border-gray-800 hover:bg-gray-200 disabled:bg-gray-300 text-sm transition-colors disabled:cursor-not-allowed flex-shrink-0"
                   style={{color: '#825432'}}
                 >
                   <Send className="w-4 h-4" />
