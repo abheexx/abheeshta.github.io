@@ -36,7 +36,7 @@ const Experience: React.FC = () => {
       title: "AI Engineer Intern",
       company: "Incepta Partners, Inc.",
       location: "Remote / United States",
-      period: "July 2025 - August 2025",
+      period: "June 2025 - August 2025",
       description: "",
       technologies: ["Python", "LangChain", "OpenAI API", "Pinecone", "FastAPI", "Vercel", "Git", "TypeScript"],
       achievements: [
@@ -63,16 +63,26 @@ const Experience: React.FC = () => {
     },
     {
       id: 4,
-      title: "Software Engineer",
-      company: "Cognizant Technology Solutions",
-      location: "Hyderabad, India",
+      title: "Technical Writer",
+      company: "Andhra Pradesh Legislative Assembly",
+      location: "Andhra Pradesh, India",
       period: "Jul 2023 - Aug 2023",
       description: "",
-      technologies: ["Python", "Django", "MySQL", "Spark", "Jenkins", "Vault", "Consul"],
+      technologies: ["API Documentation",
+    "Markdown",
+    "REST APIs",
+    "Postman",
+    "Python",
+    "Django",
+    "MySQL",
+    "Git",
+    "Confluence"],
       achievements: [
-        "Engineered full-stack employee management system using React and Spring Boot, improving data retrieval by 40%",
-        "Developed and maintained REST APIs with role-based access and automated regression tests in Postman",
-        "Deployed microservices on AWS EC2 and Docker with CI/CD pipelines in GitHub Actions for faster rollbacks"
+        "Authored clear technical documentation for internal government software systems",
+  "Translated backend workflows and REST APIs into developer-friendly guides",
+  "Documented role-based access flows and system architecture with engineers",
+  "Created API reference and testing docs using Postman and Markdown",
+  "Standardized documentation templates and version control using Git"
 
       ]
     },
@@ -89,19 +99,6 @@ const Experience: React.FC = () => {
         "Mentored 50+ students, improving course engagement"
       ]
     },
-    {
-      id: 6,
-      title: "Technical Writer",
-      company: "Andhra Pradesh Legislature",
-      location: "Amaravati, India",
-      period: "May 2021 - Aug 2021",
-      description: "",
-      technologies: ["MS Word", "Excel", "Git", "Markdown", "Document Management Systems"],
-      achievements: [
-        "Created user manuals and workflow documentation for internal software tools",
-        "Organized legislative data for digitization and archiving"
-      ]
-    }
   ];
 
   const containerVariants = {
