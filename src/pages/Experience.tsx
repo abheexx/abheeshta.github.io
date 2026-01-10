@@ -66,7 +66,7 @@ const Experience: React.FC = () => {
       title: "Technical Writer",
       company: "Andhra Pradesh Legislative Assembly",
       location: "Andhra Pradesh, India",
-      period: "Jul 2023 - Aug 2023",
+      period: "Jul 2022 - Aug 2023",
       description: "",
       technologies: ["API Documentation",
     "Markdown",
