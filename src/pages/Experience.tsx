@@ -22,7 +22,7 @@ const Experience: React.FC = () => {
       title: "Graduate Research Assistant",
       company: "University of Florida",
       location: "Gainesville, FL",
-      period: "Dec 2024 - Present",
+      period: "Dec 2024 - Dec 2025",
       description: "",
       technologies: ["PyTorch", "Docker", "Kubernetes", "GitLab", "Prometheus", "Grafana", "AWS S3"],
       achievements: [
