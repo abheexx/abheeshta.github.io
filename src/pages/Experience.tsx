@@ -33,10 +33,10 @@ const Experience: React.FC = () => {
     },
     {
       id: 2,
-      title: "AI Engineer Intern",
+      title: "AI Intern",
       company: "Incepta Partners, Inc.",
       location: "Remote / United States",
-      period: "June 2025 - August 2025",
+      period: "July 2025 - August 2025",
       description: "",
       technologies: ["Python", "LangChain", "OpenAI API", "Pinecone", "FastAPI", "Vercel", "Git", "TypeScript"],
       achievements: [
@@ -48,10 +48,10 @@ const Experience: React.FC = () => {
     },
     {
       id: 3,
-      title: "Software Engineer",
+      title: "Software Engineer Intern",
       company: "Nasscom",
       location: "New Delhi, India",
-      period: "Aug 2023 - Dec 2023",
+      period: "Mar 2023 - Aug 2023",
       description: "",
       technologies: ["Java", "Spring Boot", "Kafka", "Docker", "GCP", "Kubernetes", "Flask"],
       achievements: [
